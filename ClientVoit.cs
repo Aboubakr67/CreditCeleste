@@ -9,7 +9,7 @@ namespace CreditCeleste
     class ClientVoit : Client
     {
         private string nomVendeur;
-        private string VoitureAboubakr;
+        private string VoitureWassim;
         
         ClientVoit()
         {}
