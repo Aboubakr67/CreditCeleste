@@ -15,6 +15,9 @@
     Private monTaux As Double
     Private monMensualite As Double
 
+    Private monDateDebut As Date
+    Private monDateFin As Date
+
     ' constructeur
     Sub New()
 
@@ -44,6 +47,58 @@
         monMensualite = mensualite
         ' on va calculer la donnée qui est a zéro
 
+    End Sub
+
+
+    Public Function getMontant() As Double
+
+        Return monMontant
+
+    End Function
+
+
+    Public Function getDuree() As Double
+
+        Return monDuree
+
+    End Function
+
+    Public Function getTaux() As Double
+
+        Return monTaux
+
+    End Function
+
+    Public Function getDateDebut() As Date
+
+        Return monDateDebut
+
+    End Function
+
+    Public Function getDateFin() As Date
+
+        Return monDateFin
+
+    End Function
+
+    Sub setMontant(mont As Double)
+        monMontant = mont
+    End Sub
+
+    Sub setDuree(duree As Double)
+        monDuree = duree
+    End Sub
+
+    Sub setTaux(taux As Double)
+        monTaux = taux
+    End Sub
+
+    Sub setDateDebut(debut As Date)
+        monDateDebut = debut
+    End Sub
+
+    Sub setDateFin(fin As Date)
+        monDateFin = fin
     End Sub
 
     Public Function getMensualite() As Double
