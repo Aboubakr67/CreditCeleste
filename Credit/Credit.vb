@@ -50,6 +50,24 @@
     End Sub
 
 
+    Sub New(montant As Double, duree As Double, taux As Double, mensualite As Double, dateDebut As Date, dateFin As Date)
+
+        monMontant = montant
+        monDuree = duree
+        monTaux = taux
+        monMensualite = mensualite
+        monDateDebut = dateDebut
+        monDateFin = dateFin
+
+    End Sub
+
+
+
+
+
+
+
+
     Public Function getMontant() As Double
 
         Return monMontant

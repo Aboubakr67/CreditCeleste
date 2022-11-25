@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CreditCeleste
+namespace CreditCeleste     // Projet APP Projet 
 {
     static class Globale    // pas besoin de faire un new en static
                             // les données existent lors de la declaratio
