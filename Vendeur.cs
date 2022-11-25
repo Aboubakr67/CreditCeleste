@@ -10,7 +10,7 @@ namespace CreditCeleste
     {
         private string monIdVendeur;
         private string monNomVendeur;
-        private string monPrenomVendeur;
+        private string monPrenomVendeur;// le prenom du vendeur
 
 
         public Vendeur()
