@@ -27,6 +27,11 @@ namespace CreditCeleste
             //  identique aux variables de sessions
 
 
+            Console.WriteLine("Globale.laRegion : " + Globale.laRegion);
+            Console.WriteLine("Globale.laVille : " + Globale.laVille);
+
+
+
             //Lire l'objet consession et récuperer les vendeur pour les mettre dans le combobox
 
             foreach (Vendeur xVendeur in Globale.uneConcession.getLesVendeurs())

@@ -38,7 +38,7 @@ namespace CreditCeleste
             // 
             // cmdIntroduction
             // 
-            this.cmdIntroduction.Location = new System.Drawing.Point(146, 272);
+            this.cmdIntroduction.Location = new System.Drawing.Point(91, 288);
             this.cmdIntroduction.Name = "cmdIntroduction";
             this.cmdIntroduction.Size = new System.Drawing.Size(99, 41);
             this.cmdIntroduction.TabIndex = 0;
@@ -48,7 +48,7 @@ namespace CreditCeleste
             // 
             // cmdEtude
             // 
-            this.cmdEtude.Location = new System.Drawing.Point(317, 272);
+            this.cmdEtude.Location = new System.Drawing.Point(250, 288);
             this.cmdEtude.Name = "cmdEtude";
             this.cmdEtude.Size = new System.Drawing.Size(120, 41);
             this.cmdEtude.TabIndex = 1;
@@ -57,7 +57,7 @@ namespace CreditCeleste
             // 
             // cmdRelance
             // 
-            this.cmdRelance.Location = new System.Drawing.Point(501, 272);
+            this.cmdRelance.Location = new System.Drawing.Point(411, 288);
             this.cmdRelance.Name = "cmdRelance";
             this.cmdRelance.Size = new System.Drawing.Size(98, 41);
             this.cmdRelance.TabIndex = 2;
