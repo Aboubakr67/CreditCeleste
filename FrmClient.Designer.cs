@@ -148,7 +148,7 @@ namespace CreditCeleste
             // 
             // txtNumRue
             // 
-            this.txtNumRue.Location = new System.Drawing.Point(111, 240);
+            this.txtNumRue.Location = new System.Drawing.Point(122, 240);
             this.txtNumRue.Name = "txtNumRue";
             this.txtNumRue.Size = new System.Drawing.Size(100, 20);
             this.txtNumRue.TabIndex = 23;
