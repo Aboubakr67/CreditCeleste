@@ -8,11 +8,11 @@ namespace CreditCeleste
 {
     public abstract class Client  
     {   // indique qu'il nest plus possible d'instancier un client, (cree un client)
-        private int numeroClient;
+        private int numeroClient;       // sert a rien
         private string monCidClient;
         private string nomClient;
         private string prenomClient;
-        private int telClient;
+        private string telClient;
         private string emailClient;
         private string numRueClient;
         private string rueClient;
@@ -51,11 +51,10 @@ namespace CreditCeleste
             prenomClient = prenomC;
         }
 
-        public Client(int numClient, string monCid, string nomC, string prenomC, 
-            int telC, string emailC, string numRueC, string rueC, string villeC, 
+        public Client(string monCid, string nomC, string prenomC, 
+            string telC, string emailC, string numRueC, string rueC, string villeC, 
             string cpC)
         {
-            numeroClient = numClient;
             monCidClient = monCid;
             nomClient = nomC;
             prenomClient = prenomC;
@@ -113,12 +112,12 @@ namespace CreditCeleste
 
         }
 
-        public int getTelClient()
+        public string getTelClient()
         {
             return telClient;
         }
 
-        public void setTelClient(int telC)
+        public void setTelClient(string telC)
         {
             telClient = telC;
         }
@@ -179,11 +178,10 @@ namespace CreditCeleste
             prenomClient = prenomC;
         }
 
-        public void setClient(int numClient, string monCid, string nomC, string prenomC,
-            int telC, string emailC, string numRueC, string rueC, string villeC,
+        public void setClient(string monCid, string nomC, string prenomC,
+            string telC, string emailC, string numRueC, string rueC, string villeC,
             string cpC)
         {
-            numeroClient = numClient;
             monCidClient = monCid;
             nomClient = nomC;
             prenomClient = prenomC;

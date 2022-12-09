@@ -1,4 +1,4 @@
-﻿Public Class Credit
+﻿Public Class Credit  ' projet CreditCeleste AP
 
     ' pourquoi creer un object credit ?
     ' - evite de reecrire le code
@@ -60,12 +60,6 @@
         monDateFin = dateFin
 
     End Sub
-
-
-
-
-
-
 
 
     Public Function getMontant() As Double

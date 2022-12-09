@@ -30,7 +30,7 @@ namespace CreditCeleste
             lblMonAppli.Text = Globale.monApplication;
 
 
-            Globale.uneConcession = new Concession("Garage ZENNIR", "66 rue des Voyages");
+            Globale.uneConcession = new Concession("Garage ZENNIR", "Grand Est", "Strasbourg");
 
             // -- Rajout du vendeur
 
@@ -56,9 +56,9 @@ namespace CreditCeleste
         {
             // appel de la fenetre Introduction
 
-            frmIntroduction fenIntroduction = new frmIntroduction();
+            frmChoixConcession fenChoixConcession = new frmChoixConcession();
 
-            fenIntroduction.Show();
+            fenChoixConcession.Show();
             //this.Close();      // on ferme la fenetre
 
 
@@ -66,5 +66,7 @@ namespace CreditCeleste
 
 
         }
+
+       
     }
 }
