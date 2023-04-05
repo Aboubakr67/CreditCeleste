@@ -74,14 +74,14 @@ namespace CreditCeleste
         private void frmSaisieBien_Load(object sender, EventArgs e)
         {
             //  mettre le contenu de l'object sur l'ecran
-            // recuperer les elements de la voiture
+            //  recuperer les elements de la voiture
 
             if (Globale.uneVoiture != null)
             {
-                txtNouvVehc.Text = Globale.uneVoiture.getNomVoiture();
-                txtDatePremierImma.Text = Globale.uneVoiture.getDatePremiereImma();
-                txtNumImma.Text = Globale.uneVoiture.getNumImmatriculation();
-                txtNumSerie.Text = Globale.uneVoiture.getNumSerie();
+                txtNouvVehc.Text = Globale.uneVoiture.getNomVehicule();
+                txtDatePremierImma.Text = Globale.uneVoiture.getDatePremImmat();
+                txtNumImma.Text = Globale.uneVoiture.getNumeroImmat();
+                txtNumSerie.Text = Globale.uneVoiture.getNumeroSerie();
                 txtPuissance.Text = Globale.uneVoiture.getPuissance();
 
 

@@ -48,7 +48,7 @@ namespace CreditCeleste
 
             // Il faudrait les récuperer de la base de données
             // a l'aide de la fonction gestBdd()
-            // gestBdd();
+            //Globale.gestBdd();
 
         }
 

@@ -36,7 +36,7 @@ namespace CreditCeleste
 
             if (Globale.uneVoiture != null)
             {
-                txtNewVehc.Text = Globale.uneVoiture.getNomVoiture();
+                txtNewVehc.Text = Globale.uneVoiture.getNomVehicule();
                 txtAncVehc.Text = Globale.uneVoiture.getAncienVehicule();
 
                 foreach (RadioButton radio in gpbAgeVehicule.Controls.OfType<RadioButton>())
@@ -69,9 +69,9 @@ namespace CreditCeleste
         {
             // appel de la fenetre voiture
 
-            frmSaisieBien fenSaisieBien = new frmSaisieBien();
+            frmVoiture fenVoiture = new frmVoiture();
 
-            fenSaisieBien.Show();
+            fenVoiture.Show();
 
             this.Close();
         }
@@ -190,6 +190,11 @@ namespace CreditCeleste
 
             // a complter le reste 
             return true;
+
+        }
+
+        private void cmdVersBdd_Click(object sender, EventArgs e)
+        {
 
         }
     }

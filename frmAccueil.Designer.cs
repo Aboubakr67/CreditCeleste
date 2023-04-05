@@ -38,9 +38,10 @@ namespace CreditCeleste
             // 
             // cmdIntroduction
             // 
-            this.cmdIntroduction.Location = new System.Drawing.Point(146, 272);
+            this.cmdIntroduction.Location = new System.Drawing.Point(42, 227);
+            this.cmdIntroduction.Margin = new System.Windows.Forms.Padding(4);
             this.cmdIntroduction.Name = "cmdIntroduction";
-            this.cmdIntroduction.Size = new System.Drawing.Size(99, 41);
+            this.cmdIntroduction.Size = new System.Drawing.Size(132, 50);
             this.cmdIntroduction.TabIndex = 0;
             this.cmdIntroduction.Text = "&Introduction";
             this.cmdIntroduction.UseVisualStyleBackColor = true;
@@ -48,18 +49,20 @@ namespace CreditCeleste
             // 
             // cmdEtude
             // 
-            this.cmdEtude.Location = new System.Drawing.Point(317, 272);
+            this.cmdEtude.Location = new System.Drawing.Point(220, 227);
+            this.cmdEtude.Margin = new System.Windows.Forms.Padding(4);
             this.cmdEtude.Name = "cmdEtude";
-            this.cmdEtude.Size = new System.Drawing.Size(120, 41);
+            this.cmdEtude.Size = new System.Drawing.Size(160, 50);
             this.cmdEtude.TabIndex = 1;
             this.cmdEtude.Text = "&Etude";
             this.cmdEtude.UseVisualStyleBackColor = true;
             // 
             // cmdRelance
             // 
-            this.cmdRelance.Location = new System.Drawing.Point(501, 272);
+            this.cmdRelance.Location = new System.Drawing.Point(432, 227);
+            this.cmdRelance.Margin = new System.Windows.Forms.Padding(4);
             this.cmdRelance.Name = "cmdRelance";
-            this.cmdRelance.Size = new System.Drawing.Size(98, 41);
+            this.cmdRelance.Size = new System.Drawing.Size(131, 50);
             this.cmdRelance.TabIndex = 2;
             this.cmdRelance.Text = "&Relance";
             this.cmdRelance.UseVisualStyleBackColor = true;
@@ -67,31 +70,34 @@ namespace CreditCeleste
             // lblMonAppli
             // 
             this.lblMonAppli.AutoSize = true;
-            this.lblMonAppli.Location = new System.Drawing.Point(631, 13);
+            this.lblMonAppli.Location = new System.Drawing.Point(517, 15);
+            this.lblMonAppli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMonAppli.Name = "lblMonAppli";
-            this.lblMonAppli.Size = new System.Drawing.Size(35, 13);
+            this.lblMonAppli.Size = new System.Drawing.Size(46, 17);
             this.lblMonAppli.TabIndex = 3;
             this.lblMonAppli.Text = "label1";
             // 
             // lblMaRegion
             // 
             this.lblMaRegion.AutoSize = true;
-            this.lblMaRegion.Location = new System.Drawing.Point(29, 12);
+            this.lblMaRegion.Location = new System.Drawing.Point(39, 15);
+            this.lblMaRegion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMaRegion.Name = "lblMaRegion";
-            this.lblMaRegion.Size = new System.Drawing.Size(35, 13);
+            this.lblMaRegion.Size = new System.Drawing.Size(46, 17);
             this.lblMaRegion.TabIndex = 4;
             this.lblMaRegion.Text = "label2";
             // 
             // frmAccueil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(618, 329);
             this.Controls.Add(this.lblMaRegion);
             this.Controls.Add(this.lblMonAppli);
             this.Controls.Add(this.cmdRelance);
             this.Controls.Add(this.cmdEtude);
             this.Controls.Add(this.cmdIntroduction);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAccueil";
             this.Text = "Accueil";
             this.Load += new System.EventHandler(this.Form1_Load);
