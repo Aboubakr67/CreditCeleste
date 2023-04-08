@@ -22,6 +22,8 @@ namespace CreditCeleste     // Projet APP Projet
         // gestion de la voiture
         public static Voiture uneVoiture;  // la voiture en cours de traitement
 
+        public static List<Voiture> lesVoitures = new List<Voiture>();
+
         // gestion du client et du vendeur
 
         public static ClientVoit unClientVoit;
@@ -42,8 +44,8 @@ namespace CreditCeleste     // Projet APP Projet
         // stocke la ville dans la variable globale laVille
         public static string laVille;
 
-
-
+        // liste de tout les credits de la BDD
+        public static List<string> lesCreditsDeLaBDD = new List<string>();
 
 
     }

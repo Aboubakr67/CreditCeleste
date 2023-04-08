@@ -42,11 +42,11 @@ namespace CreditCeleste
             {
                 if (Globale.uneVoiture == null)
                 {
-                    Globale.uneVoiture = new Voiture(txtNouvVehc.Text, age, "", txtDatePremierImma.Text, txtNumImma.Text, txtNumSerie.Text, txtPuissance.Text);
+                    //Globale.uneVoiture = new Voiture(txtNouvVehc.Text, age, "", txtDatePremierImma.Text, txtNumImma.Text, txtNumSerie.Text, txtPuissance.Text);
                 }
                 else
                 {   // la voiture est à modifier avec les données
-                    Globale.uneVoiture.setVoiture(txtNouvVehc.Text, age, txtDatePremierImma.Text, txtNumImma.Text, txtNumSerie.Text, txtPuissance.Text);
+                    //Globale.uneVoiture.setVoiture(txtNouvVehc.Text, age, txtDatePremierImma.Text, txtNumImma.Text, txtNumSerie.Text, txtPuissance.Text);
                     // Creer la méthode setVoiture avec toutes les paramètres
                 }
             }
@@ -73,12 +73,12 @@ namespace CreditCeleste
 
         private void frmSaisieBien_Load(object sender, EventArgs e)
         {
-            //  mettre le contenu de l'object sur l'ecran
-            // recuperer les elements de la voiture
+            lblRegion.Text = Globale.laRegion;
+            lblVille.Text = Globale.laVille;
 
             if (Globale.uneVoiture != null)
             {
-                txtNouvVehc.Text = Globale.uneVoiture.getNomVoiture();
+                txtNouvVehc.Text = Globale.uneVoiture.getMarque();
                 txtDatePremierImma.Text = Globale.uneVoiture.getDatePremiereImma();
                 txtNumImma.Text = Globale.uneVoiture.getNumImmatriculation();
                 txtNumSerie.Text = Globale.uneVoiture.getNumSerie();
@@ -87,7 +87,7 @@ namespace CreditCeleste
 
                 foreach (RadioButton radio in gpbAgeVehicule.Controls.OfType<RadioButton>())
                 {
-                    if (radio.Text == Globale.uneVoiture.getAgeVehicule())
+                    if (radio.Text == Globale.uneVoiture.getAnneeVehicule())
                     {
                         radio.Checked = true;
                     } 
@@ -141,11 +141,11 @@ namespace CreditCeleste
             return true;
 
         }
-
         private void gpbAgeVehicule_Enter(object sender, EventArgs e)
         {
 
         }
+
 
         private void cmdCredit_Click(object sender, EventArgs e)
         {
@@ -154,6 +154,11 @@ namespace CreditCeleste
             this.Close();
         }
 
-       
+        private void cmdClient_Click(object sender, EventArgs e)
+        {
+            FrmClient fenClient = new FrmClient();
+            fenClient.Show();
+            this.Close();
+        }
     }
 }

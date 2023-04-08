@@ -48,6 +48,9 @@ namespace CreditCeleste
             this.rbOcc3 = new System.Windows.Forms.RadioButton();
             this.rbNeuf = new System.Windows.Forms.RadioButton();
             this.cmdCredit = new System.Windows.Forms.Button();
+            this.cmdClient = new System.Windows.Forms.Button();
+            this.lblVille = new System.Windows.Forms.Label();
+            this.lblRegion = new System.Windows.Forms.Label();
             this.gpbNouveauVehicule.SuspendLayout();
             this.gpbAgeVehicule.SuspendLayout();
             this.SuspendLayout();
@@ -231,11 +234,42 @@ namespace CreditCeleste
             this.cmdCredit.UseVisualStyleBackColor = true;
             this.cmdCredit.Click += new System.EventHandler(this.cmdCredit_Click);
             // 
+            // cmdClient
+            // 
+            this.cmdClient.Location = new System.Drawing.Point(418, 385);
+            this.cmdClient.Name = "cmdClient";
+            this.cmdClient.Size = new System.Drawing.Size(128, 53);
+            this.cmdClient.TabIndex = 19;
+            this.cmdClient.Text = "Client";
+            this.cmdClient.UseVisualStyleBackColor = true;
+            this.cmdClient.Click += new System.EventHandler(this.cmdClient_Click);
+            // 
+            // lblVille
+            // 
+            this.lblVille.AutoSize = true;
+            this.lblVille.Location = new System.Drawing.Point(740, 47);
+            this.lblVille.Name = "lblVille";
+            this.lblVille.Size = new System.Drawing.Size(35, 13);
+            this.lblVille.TabIndex = 38;
+            this.lblVille.Text = "label2";
+            // 
+            // lblRegion
+            // 
+            this.lblRegion.AutoSize = true;
+            this.lblRegion.Location = new System.Drawing.Point(740, 21);
+            this.lblRegion.Name = "lblRegion";
+            this.lblRegion.Size = new System.Drawing.Size(35, 13);
+            this.lblRegion.TabIndex = 37;
+            this.lblRegion.Text = "label2";
+            // 
             // frmSaisieBien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblVille);
+            this.Controls.Add(this.lblRegion);
+            this.Controls.Add(this.cmdClient);
             this.Controls.Add(this.cmdCredit);
             this.Controls.Add(this.gpbAgeVehicule);
             this.Controls.Add(this.btnValider);
@@ -282,5 +316,8 @@ namespace CreditCeleste
         private System.Windows.Forms.RadioButton rbOcc3;
         private System.Windows.Forms.RadioButton rbNeuf;
         private System.Windows.Forms.Button cmdCredit;
+        private System.Windows.Forms.Button cmdClient;
+        private System.Windows.Forms.Label lblVille;
+        private System.Windows.Forms.Label lblRegion;
     }
 }
