@@ -261,6 +261,23 @@ namespace CreditCeleste
 
         private void cmdAccueil_Click(object sender, EventArgs e)
         {
+
+            Globale.unClientVoit = null;
+            Globale.uneConcession = null;
+            Globale.uneVoiture = null;
+            Globale.laRegion = "";
+            Globale.laVille = "";
+            Globale.lesCredits.Clear();
+            Globale.lesRegions.Clear();
+            Globale.lesVilles.Clear();
+            Globale.lesCreditsDeLaBDD.Clear();
+            
+
+
+            Globale.lesVoitures.Clear();
+
+
+
             frmAccueil fenAccueil = new frmAccueil();
 
             fenAccueil.Show();

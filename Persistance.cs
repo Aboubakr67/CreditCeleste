@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CreditCeleste // AP
 {
@@ -572,6 +573,40 @@ namespace CreditCeleste // AP
                 throw;
             }
 
+        }
+
+        public static void ChargerImages(string codeConcession, string marque, string modele, string annee, string energie, PictureBox pic)
+        {
+            try
+            {
+                using (SqlConnection oCnx = cnx)
+                {
+                    using (SqlCommand cmd = oCnx.CreateCommand())
+                    {
+                        Persistance.cnx.Open();
+                        new SqlCommand("recupImageVoiture", Persistance.cnx);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@codeConcession", codeConcession);
+                        cmd.Parameters.AddWithValue("@marque", marque);
+                        cmd.Parameters.AddWithValue("@modele", modele);
+                        cmd.Parameters.AddWithValue("@anneeModele", annee);
+                        cmd.Parameters.AddWithValue("@energie", energie);
+                        SqlDataReader dr;
+                        //oCnx.QuickOpen(3000);
+                        dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            pic.Image = Globale.ConvertByteArrayToImage((byte[])dr["imageVehicule"]);
+                        }
+                        oCnx.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //throw;
+            }
         }
 
 

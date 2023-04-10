@@ -446,8 +446,26 @@ namespace CreditCeleste
                 }
                 
             }
-            
-           
+
+            string codeConcession = Globale.uneConcession.getCodeConcession();
+            string marque = Convert.ToString(cboxMarque.SelectedItem);
+            string modele = Convert.ToString(cboxModele.SelectedItem);
+            string anneeModele = Convert.ToString(cboxAnneeModele.SelectedItem);
+            string energieVehicule = Convert.ToString(cboxEnergie.SelectedItem);
+
+            // Créer un PictureBox avec un nom de variable picCategorie
+            PictureBox picCategorie = new PictureBox();
+            picCategorie.Location = new Point(10, 10); // position de la PictureBox sur la form
+            picCategorie.Size = new Size(200, 200); // taille de la PictureBox
+            this.Controls.Add(picCategorie); // ajouter la PictureBox à la form
+
+            // Appeler la méthode ChargerImages            
+            //Persistance.ChargerImages(codeConcession, marque, modele, anneeModele, energieVehicule, picCategorie);
+
+
+
+
+
         }
 
         private void cmdCredit_Click(object sender, EventArgs e)
