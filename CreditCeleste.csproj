@@ -12,6 +12,25 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\Users\aboub\Desktop\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://localhost:8080/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +50,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6CD51D918887A6B2C9CB6EBD587872560B470209</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CreditCeleste_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Client">
@@ -79,23 +110,29 @@
     <Compile Include="frmAccueil.Designer.cs">
       <DependentUpon>frmAccueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCreditDeLaBDD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCreditDeLaBDD.Designer.cs">
+      <DependentUpon>FrmCreditDeLaBDD.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIntroduction.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmIntroduction.Designer.cs">
       <DependentUpon>frmIntroduction.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListeCredit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmListeCredit.Designer.cs">
-      <DependentUpon>FrmListeCredit.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSaisieBien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSaisieBien.Designer.cs">
       <DependentUpon>frmSaisieBien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVoiture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVoiture.Designer.cs">
+      <DependentUpon>frmVoiture.cs</DependentUpon>
     </Compile>
     <Compile Include="Globale.cs" />
     <Compile Include="Persistance.cs" />
@@ -115,14 +152,17 @@
     <EmbeddedResource Include="frmAccueil.resx">
       <DependentUpon>frmAccueil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCreditDeLaBDD.resx">
+      <DependentUpon>FrmCreditDeLaBDD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIntroduction.resx">
       <DependentUpon>frmIntroduction.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListeCredit.resx">
-      <DependentUpon>FrmListeCredit.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmSaisieBien.resx">
       <DependentUpon>frmSaisieBien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVoiture.resx">
+      <DependentUpon>frmVoiture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,6 +175,7 @@
     </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
+    <None Include="CreditCeleste_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -147,6 +188,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

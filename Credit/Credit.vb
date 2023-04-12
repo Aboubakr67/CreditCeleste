@@ -113,11 +113,13 @@
         monDateFin = fin
     End Sub
 
-    Public Function getMensualite() As Double
+    Public Function getMensualite() As Double  ' ap
 
-        monTaux = monTaux / 1200 ' un taux mensuel en pourcentage
+        Dim montauxLocal As Double
 
-        monMensualite = Math.Round((monMontant * monTaux) / (1 - Math.Pow(1 + monTaux, -monDuree)), 2)
+        montauxLocal = monTaux / 1200 ' un taux mensuel en pourcentage
+
+        monMensualite = Math.Round((monMontant * montauxLocal) / (1 - Math.Pow(1 + montauxLocal, -monDuree)), 2)
 
 
         Return monMensualite

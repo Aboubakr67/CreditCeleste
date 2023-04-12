@@ -8,7 +8,7 @@ namespace CreditCeleste  // Mon tp
 {
     class Concession
     {
-
+        private string codeConcession;
         private string monNomConcession; // attribut propre à l'objet
         private string telConcession;
         private string mailConcession;
@@ -22,22 +22,47 @@ namespace CreditCeleste  // Mon tp
         // il faut créer la class vendeur
 
 
-        public static string maRegion = "Alsace";  // attribut de classe
+        //public static string maRegion = "Alsace";  // attribut de classe
         // du moment qu'on declare une variable 
 
         public Concession()
         {
         }
-        public Concession(string NomConcession, string laRegionConcession, string villeConcession)
+        public Concession(string NomConcession, string laRegionConcession, string lavilleConcession)
         {
             monNomConcession = NomConcession;
             regionConcession = laRegionConcession;
-            villeConcession = this.villeConcession;
+            villeConcession = lavilleConcession;
+        }
+
+        public Concession(string codeC,string NomConcession, string telConc, string mailConc, string laRegionConcession, string lavilleConcession, string stock)
+        {
+            codeConcession = codeC;
+            monNomConcession = NomConcession;
+            telConcession = telConc;
+            mailConcession = mailConc;
+            regionConcession = laRegionConcession;
+            villeConcession = lavilleConcession;
+            stockVehicule = stock;
         }
 
         // -- Mutateurs 
         // Propriétes
         //public string MonAdresseConsession { get => monAdresseConcession; set => monAdresseConcession = value; }
+
+
+
+        public string getCodeConcession()
+        {
+            return codeConcession;
+        }
+
+        public void setCodeConcession(string codeConc)
+        {
+            codeConcession = codeConc;
+        }
+
+
 
         public string getMonNomConcession()
         {

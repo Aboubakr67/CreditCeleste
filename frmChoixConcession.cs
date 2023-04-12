@@ -27,9 +27,10 @@ namespace CreditCeleste
 
             if(verifSaisie())
             {
-                frmIntroduction fenIntroduction = new frmIntroduction();
+               
+                FrmClient fenClient = new FrmClient();
 
-                fenIntroduction.Show();
+                fenClient.Show();
                 //this.Close();      // on ferme la fenetre
 
 
@@ -41,6 +42,9 @@ namespace CreditCeleste
 
         private void frmChoixConcession_Load(object sender, EventArgs e)
         {
+            cboRegion.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboVille.DropDownStyle = ComboBoxStyle.DropDownList;
+
             Persistance.RecupConcessionRegionBDD();
 
             foreach (string xRegion in Globale.lesRegions)

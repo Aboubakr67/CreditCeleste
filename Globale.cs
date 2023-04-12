@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,8 @@ namespace CreditCeleste     // Projet APP Projet
         // gestion de la voiture
         public static Voiture uneVoiture;  // la voiture en cours de traitement
 
+        public static List<Voiture> lesVoitures = new List<Voiture>();
+
         // gestion du client et du vendeur
 
         public static ClientVoit unClientVoit;
@@ -42,9 +46,25 @@ namespace CreditCeleste     // Projet APP Projet
         // stocke la ville dans la variable globale laVille
         public static string laVille;
 
+        // liste de tout les credits de la BDD
+        public static List<string> lesCreditsDeLaBDD = new List<string>();
 
 
+        public static byte[] ConvertImageToBytes(Image img)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
 
-
+        public static Image ConvertByteArrayToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
     }
 }

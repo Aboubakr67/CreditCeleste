@@ -134,7 +134,7 @@ namespace CreditCeleste
 
         public string getNumRueClient()
         {
-            return emailClient;
+            return numRueClient;
         }
 
         public void setNumRueClient(string numRueC)
@@ -144,7 +144,7 @@ namespace CreditCeleste
 
         public string getRueClient()
         {
-            return emailClient;
+            return rueClient;
         }
 
         public void setRueClient(string rueC)
@@ -153,7 +153,7 @@ namespace CreditCeleste
         }
         public string getVilleClient()
         {
-            return emailClient;
+            return villeClient;
         }
 
         public void setVilleClient(string villeC)
@@ -163,7 +163,7 @@ namespace CreditCeleste
 
         public string getCodePostalClient()
         {
-            return emailClient;
+            return cpClient;
         }
 
         public void setCodePostalClient(string cpC)
