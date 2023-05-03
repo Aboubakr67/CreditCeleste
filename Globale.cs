@@ -31,6 +31,7 @@ namespace CreditCeleste
         public static List<Credit> lesCredits = new List<Credit>();
         // pour déclarer et cree une liste de crédit
 
+
         public static string gestBdd()
         {
             // connexion à une base de données
