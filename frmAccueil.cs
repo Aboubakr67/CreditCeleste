@@ -22,14 +22,19 @@ namespace CreditCeleste
         {
             // -- Création d'un concession
 
+<<<<<<< HEAD
             // gerer ma region
             lblMaRegion.Text = Concession.maRegion;
 
 
+=======
+          
+>>>>>>> origin/Aboubakr
             // Gestion de mon application (Nom de la personne qui a fait le projet)
             lblMonAppli.Text = Globale.monApplication;
 
 
+<<<<<<< HEAD
             Globale.uneConcession = new Concession("Garage ZENNIR", "66 rue des Voyages");
 
             // -- Rajout du vendeur
@@ -49,6 +54,13 @@ namespace CreditCeleste
             // Il faudrait les récuperer de la base de données
             // a l'aide de la fonction gestBdd()
             //Globale.gestBdd();
+=======
+            //Globale.uneConcession = new Concession("Garage ZENNIR", "Grand Est", "Strasbourg");
+
+            
+
+    
+>>>>>>> origin/Aboubakr
 
         }
 
@@ -56,9 +68,15 @@ namespace CreditCeleste
         {
             // appel de la fenetre Introduction
 
+<<<<<<< HEAD
             frmIntroduction fenIntroduction = new frmIntroduction();
 
             fenIntroduction.Show();
+=======
+            frmChoixConcession fenChoixConcession = new frmChoixConcession();
+
+            fenChoixConcession.Show();
+>>>>>>> origin/Aboubakr
             //this.Close();      // on ferme la fenetre
 
 
@@ -66,5 +84,16 @@ namespace CreditCeleste
 
 
         }
+<<<<<<< HEAD
+=======
+
+        private void cmdEtude_Click(object sender, EventArgs e)
+        {
+            FrmCreditDeLaBDD fenCreditDeLaBDD = new FrmCreditDeLaBDD();
+            fenCreditDeLaBDD.Show();
+            this.Hide();
+            
+        }
+>>>>>>> origin/Aboubakr
     }
 }

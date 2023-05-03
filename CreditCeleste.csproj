@@ -12,6 +12,28 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+<<<<<<< HEAD
+=======
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\Users\aboub\Desktop\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://localhost:8080/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+>>>>>>> origin/Aboubakr
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +54,21 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+<<<<<<< HEAD
+=======
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6CD51D918887A6B2C9CB6EBD587872560B470209</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CreditCeleste_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+>>>>>>> origin/Aboubakr
   <ItemGroup>
     <Reference Include="Client">
       <HintPath>Client\obj\Debug\Client.dll</HintPath>
@@ -55,6 +92,21 @@
   <ItemGroup>
     <Compile Include="ClientVoit.cs" />
     <Compile Include="Concession.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="frmChoixConcession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChoixConcession.Designer.cs">
+      <DependentUpon>frmChoixConcession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClient.Designer.cs">
+      <DependentUpon>FrmClient.cs</DependentUpon>
+    </Compile>
+>>>>>>> origin/Aboubakr
     <Compile Include="FrmCredit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,18 +119,30 @@
     <Compile Include="frmAccueil.Designer.cs">
       <DependentUpon>frmAccueil.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="FrmCreditDeLaBDD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCreditDeLaBDD.Designer.cs">
+      <DependentUpon>FrmCreditDeLaBDD.cs</DependentUpon>
+    </Compile>
+>>>>>>> origin/Aboubakr
     <Compile Include="frmIntroduction.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmIntroduction.Designer.cs">
       <DependentUpon>frmIntroduction.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="FrmListeCredit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmListeCredit.Designer.cs">
       <DependentUpon>FrmListeCredit.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> origin/Aboubakr
     <Compile Include="frmSaisieBien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,22 +156,44 @@
       <DependentUpon>frmVoiture.cs</DependentUpon>
     </Compile>
     <Compile Include="Globale.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Persistance.cs" />
+>>>>>>> origin/Aboubakr
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Voiture.cs" />
     <Compile Include="Vendeur.cs" />
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="frmChoixConcession.resx">
+      <DependentUpon>frmChoixConcession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClient.resx">
+      <DependentUpon>FrmClient.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> origin/Aboubakr
     <EmbeddedResource Include="FrmCredit.resx">
       <DependentUpon>FrmCredit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAccueil.resx">
       <DependentUpon>frmAccueil.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="frmIntroduction.resx">
       <DependentUpon>frmIntroduction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListeCredit.resx">
       <DependentUpon>FrmListeCredit.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    <EmbeddedResource Include="FrmCreditDeLaBDD.resx">
+      <DependentUpon>FrmCreditDeLaBDD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIntroduction.resx">
+      <DependentUpon>frmIntroduction.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> origin/Aboubakr
     <EmbeddedResource Include="frmSaisieBien.resx">
       <DependentUpon>frmSaisieBien.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +209,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="CreditCeleste_TemporaryKey.pfx" />
+>>>>>>> origin/Aboubakr
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -136,5 +228,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+<<<<<<< HEAD
+=======
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+>>>>>>> origin/Aboubakr
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

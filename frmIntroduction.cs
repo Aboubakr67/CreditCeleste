@@ -27,6 +27,14 @@ namespace CreditCeleste
             //  identique aux variables de sessions
 
 
+<<<<<<< HEAD
+=======
+            Console.WriteLine("Globale.laRegion : " + Globale.laRegion);
+            Console.WriteLine("Globale.laVille : " + Globale.laVille);
+
+
+
+>>>>>>> origin/Aboubakr
             //Lire l'objet consession et récuperer les vendeur pour les mettre dans le combobox
 
             foreach (Vendeur xVendeur in Globale.uneConcession.getLesVendeurs())
@@ -36,12 +44,20 @@ namespace CreditCeleste
 
             if (Globale.uneVoiture != null)
             {
+<<<<<<< HEAD
                 txtNewVehc.Text = Globale.uneVoiture.getNomVehicule();
                 txtAncVehc.Text = Globale.uneVoiture.getAncienVehicule();
 
                 foreach (RadioButton radio in gpbAgeVehicule.Controls.OfType<RadioButton>())
                 {
                     if (radio.Text == Globale.uneVoiture.getAgeVehicule())
+=======
+                txtNewVehc.Text = Globale.uneVoiture.getMarque();
+
+                foreach (RadioButton radio in gpbAgeVehicule.Controls.OfType<RadioButton>())
+                {
+                    if (radio.Text == Globale.uneVoiture.getAnneeVehicule())
+>>>>>>> origin/Aboubakr
                     {
                         radio.Checked = true;
                     }
@@ -69,6 +85,15 @@ namespace CreditCeleste
         {
             // appel de la fenetre voiture
 
+<<<<<<< HEAD
+=======
+            //frmSaisieBien fenSaisieBien = new frmSaisieBien();
+
+            //fenSaisieBien.Show();
+
+            //this.Close();
+
+>>>>>>> origin/Aboubakr
             frmVoiture fenVoiture = new frmVoiture();
 
             fenVoiture.Show();
@@ -103,14 +128,22 @@ namespace CreditCeleste
             {
                 if (Globale.uneVoiture == null)
                 {       // la voiture n'existe pas
+<<<<<<< HEAD
                     Globale.uneVoiture = new Voiture(txtNewVehc.Text, age, txtAncVehc.Text);
+=======
+                    //Globale.uneVoiture = new Voiture(txtNewVehc.Text, age, txtAncVehc.Text);
+>>>>>>> origin/Aboubakr
                 }
                 else  // la voiture existe
                 {
                     // reprendre les données textes de l'écrans
                     // et les mettre dans l'objet
                     // 
+<<<<<<< HEAD
                     Globale.uneVoiture.setVoiture(txtNewVehc.Text, age, txtAncVehc.Text);
+=======
+                    //Globale.uneVoiture.setVoiture(txtNewVehc.Text, age, txtAncVehc.Text);
+>>>>>>> origin/Aboubakr
                 }
 
                 if (Globale.unClientVoit == null)
@@ -192,10 +225,13 @@ namespace CreditCeleste
             return true;
 
         }
+<<<<<<< HEAD
 
         private void cmdVersBdd_Click(object sender, EventArgs e)
         {
 
         }
+=======
+>>>>>>> origin/Aboubakr
     }
 }

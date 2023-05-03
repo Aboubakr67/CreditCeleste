@@ -9,6 +9,10 @@ namespace CreditCeleste
     class ClientVoit : Client
     {
         private string nomVendeur;
+<<<<<<< HEAD
+=======
+        private string VoitureAboubakr3;
+>>>>>>> origin/Aboubakr
         
         ClientVoit()
         {}
@@ -21,6 +25,16 @@ namespace CreditCeleste
             nomVendeur = nomVend;
         }
 
+<<<<<<< HEAD
+=======
+        
+        public ClientVoit(string cidClient, string nomCli, string prenomCli, string nomVend, string telCli, string emailCli, string numRueCli, string rueCli, string villeCli,
+            string cpCli) : base(cidClient, nomCli, prenomCli, telCli, emailCli, numRueCli, rueCli, villeCli, cpCli)
+        {
+            nomVendeur = nomVend;
+        }
+
+>>>>>>> origin/Aboubakr
         public void majVersBdd()
         {
             // stocke l'objet dans la base de données
@@ -36,6 +50,16 @@ namespace CreditCeleste
             // pareil
         }
 
+<<<<<<< HEAD
+=======
+        public void setClientVoit(string cidClient, string nomCli, string prenomCli, string nomVend, string telCli, string emailCli, string numRueCli, string rueCli, string villeCli, string cpCli)
+        {
+            nomVendeur = nomVend;
+            // setClient vient de la mère (Client)
+            setClient(cidClient, nomCli, prenomCli, telCli, emailCli, numRueCli, rueCli, villeCli, cpCli);
+        }
+
+>>>>>>> origin/Aboubakr
         public string getVendeur()
         {
             return nomVendeur;

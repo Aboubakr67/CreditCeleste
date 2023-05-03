@@ -42,11 +42,19 @@ namespace CreditCeleste
             {
                 if (Globale.uneVoiture == null)
                 {
+<<<<<<< HEAD
                     Globale.uneVoiture = new Voiture(txtNouvVehc.Text, age, "", txtDatePremierImma.Text, txtNumImma.Text, txtNumSerie.Text, txtPuissance.Text);
                 }
                 else
                 {   // la voiture est à modifier avec les données
                     Globale.uneVoiture.setVoiture(txtNouvVehc.Text, age, txtDatePremierImma.Text, txtNumImma.Text, txtNumSerie.Text, txtPuissance.Text);
+=======
+                    //Globale.uneVoiture = new Voiture(txtNouvVehc.Text, age, "", txtDatePremierImma.Text, txtNumImma.Text, txtNumSerie.Text, txtPuissance.Text);
+                }
+                else
+                {   // la voiture est à modifier avec les données
+                    //Globale.uneVoiture.setVoiture(txtNouvVehc.Text, age, txtDatePremierImma.Text, txtNumImma.Text, txtNumSerie.Text, txtPuissance.Text);
+>>>>>>> origin/Aboubakr
                     // Creer la méthode setVoiture avec toutes les paramètres
                 }
             }
@@ -73,6 +81,7 @@ namespace CreditCeleste
 
         private void frmSaisieBien_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             //  mettre le contenu de l'object sur l'ecran
             //  recuperer les elements de la voiture
 
@@ -82,12 +91,27 @@ namespace CreditCeleste
                 txtDatePremierImma.Text = Globale.uneVoiture.getDatePremImmat();
                 txtNumImma.Text = Globale.uneVoiture.getNumeroImmat();
                 txtNumSerie.Text = Globale.uneVoiture.getNumeroSerie();
+=======
+            lblRegion.Text = Globale.laRegion;
+            lblVille.Text = Globale.laVille;
+
+            if (Globale.uneVoiture != null)
+            {
+                txtNouvVehc.Text = Globale.uneVoiture.getMarque();
+                txtDatePremierImma.Text = Globale.uneVoiture.getDatePremiereImma();
+                txtNumImma.Text = Globale.uneVoiture.getNumImmatriculation();
+                txtNumSerie.Text = Globale.uneVoiture.getNumSerie();
+>>>>>>> origin/Aboubakr
                 txtPuissance.Text = Globale.uneVoiture.getPuissance();
 
 
                 foreach (RadioButton radio in gpbAgeVehicule.Controls.OfType<RadioButton>())
                 {
+<<<<<<< HEAD
                     if (radio.Text == Globale.uneVoiture.getAgeVehicule())
+=======
+                    if (radio.Text == Globale.uneVoiture.getAnneeVehicule())
+>>>>>>> origin/Aboubakr
                     {
                         radio.Checked = true;
                     } 
@@ -141,12 +165,19 @@ namespace CreditCeleste
             return true;
 
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/Aboubakr
         private void gpbAgeVehicule_Enter(object sender, EventArgs e)
         {
 
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Aboubakr
         private void cmdCredit_Click(object sender, EventArgs e)
         {
             FrmCredit fenCredit = new FrmCredit();
@@ -154,6 +185,15 @@ namespace CreditCeleste
             this.Close();
         }
 
+<<<<<<< HEAD
        
+=======
+        private void cmdClient_Click(object sender, EventArgs e)
+        {
+            FrmClient fenClient = new FrmClient();
+            fenClient.Show();
+            this.Close();
+        }
+>>>>>>> origin/Aboubakr
     }
 }

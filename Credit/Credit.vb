@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿Public Class Credit
+=======
+﻿Public Class Credit  ' projet CreditCeleste AP
+>>>>>>> origin/Aboubakr
 
     ' pourquoi creer un object credit ?
     ' - evite de reecrire le code
@@ -15,6 +19,12 @@
     Private monTaux As Double
     Private monMensualite As Double
 
+<<<<<<< HEAD
+=======
+    Private monDateDebut As Date
+    Private monDateFin As Date
+
+>>>>>>> origin/Aboubakr
     ' constructeur
     Sub New()
 
@@ -46,11 +56,85 @@
 
     End Sub
 
+<<<<<<< HEAD
     Public Function getMensualite() As Double
 
         monTaux = monTaux / 1200 ' un taux mensuel en pourcentage
 
         monMensualite = Math.Round((monMontant * monTaux) / (1 - Math.Pow(1 + monTaux, -monDuree)), 2)
+=======
+
+    Sub New(montant As Double, duree As Double, taux As Double, mensualite As Double, dateDebut As Date, dateFin As Date)
+
+        monMontant = montant
+        monDuree = duree
+        monTaux = taux
+        monMensualite = mensualite
+        monDateDebut = dateDebut
+        monDateFin = dateFin
+
+    End Sub
+
+
+    Public Function getMontant() As Double
+
+        Return monMontant
+
+    End Function
+
+
+    Public Function getDuree() As Double
+
+        Return monDuree
+
+    End Function
+
+    Public Function getTaux() As Double
+
+        Return monTaux
+
+    End Function
+
+    Public Function getDateDebut() As Date
+
+        Return monDateDebut
+
+    End Function
+
+    Public Function getDateFin() As Date
+
+        Return monDateFin
+
+    End Function
+
+    Sub setMontant(mont As Double)
+        monMontant = mont
+    End Sub
+
+    Sub setDuree(duree As Double)
+        monDuree = duree
+    End Sub
+
+    Sub setTaux(taux As Double)
+        monTaux = taux
+    End Sub
+
+    Sub setDateDebut(debut As Date)
+        monDateDebut = debut
+    End Sub
+
+    Sub setDateFin(fin As Date)
+        monDateFin = fin
+    End Sub
+
+    Public Function getMensualite() As Double  ' ap
+
+        Dim montauxLocal As Double
+
+        montauxLocal = monTaux / 1200 ' un taux mensuel en pourcentage
+
+        monMensualite = Math.Round((monMontant * montauxLocal) / (1 - Math.Pow(1 + montauxLocal, -monDuree)), 2)
+>>>>>>> origin/Aboubakr
 
 
         Return monMensualite

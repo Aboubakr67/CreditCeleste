@@ -1,11 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
 using System.Data.SqlClient;
+=======
+using System.Drawing;
+using System.IO;
+>>>>>>> origin/Aboubakr
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+<<<<<<< HEAD
 namespace CreditCeleste
+=======
+namespace CreditCeleste     // Projet APP Projet 
+>>>>>>> origin/Aboubakr
 {
     static class Globale    // pas besoin de faire un new en static
                             // les données existent lors de la declaratio
@@ -16,7 +25,10 @@ namespace CreditCeleste
         public static Concession uneConcession; // Declaration
                                                 // Variable en dehort des programmes (static)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/Aboubakr
         // Gestion de mon application
 
         public static string monApplication = "Aboubakr";
@@ -24,6 +36,11 @@ namespace CreditCeleste
         // gestion de la voiture
         public static Voiture uneVoiture;  // la voiture en cours de traitement
 
+<<<<<<< HEAD
+=======
+        public static List<Voiture> lesVoitures = new List<Voiture>();
+
+>>>>>>> origin/Aboubakr
         // gestion du client et du vendeur
 
         public static ClientVoit unClientVoit;
@@ -31,6 +48,7 @@ namespace CreditCeleste
         public static List<Credit> lesCredits = new List<Credit>();
         // pour déclarer et cree une liste de crédit
 
+<<<<<<< HEAD
 
         public static string gestBdd()
         {
@@ -108,5 +126,40 @@ namespace CreditCeleste
 
 
 
+=======
+        // liste de toutes les regions des agences
+        public static List<String> lesRegions = new List<string>();
+
+        // stocke la region dans la variable globale laRegion
+        public static string laRegion;
+
+
+        // liste de toutes les villes ou se trouve l'agence selectionner
+        public static List<String> lesVilles = new List<string>();
+
+        // stocke la ville dans la variable globale laVille
+        public static string laVille;
+
+        // liste de tout les credits de la BDD
+        public static List<string> lesCreditsDeLaBDD = new List<string>();
+
+
+        public static byte[] ConvertImageToBytes(Image img)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
+        public static Image ConvertByteArrayToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+>>>>>>> origin/Aboubakr
     }
 }
