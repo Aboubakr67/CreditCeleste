@@ -16,6 +16,7 @@ namespace CreditCeleste
         public static Concession uneConcession; // Declaration
                                                 // Variable en dehort des programmes (static)
 
+
         // Gestion de mon application
 
         public static string monApplication = "Aboubakr";
