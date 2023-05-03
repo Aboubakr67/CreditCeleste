@@ -13,7 +13,7 @@ namespace CreditCeleste // AP
     {
 
 
-        public static SqlConnection cnx = new SqlConnection("Data Source=192.168.1.71;User Id=cnxtest;password=cnxtest;Initial Catalog=CreditCelesteAP;");
+        public static SqlConnection cnx = new SqlConnection("Data Source=192.168.1.70;User Id=cnxtest;password=cnxtest;Initial Catalog=CreditCelesteAP;");
 
         //public static SqlConnection cnx = new SqlConnection("Data Source=10.129.187.129; User Id = cnxtest; password = cnxtest; Initial Catalog = CreditCelesteAP");
         //public static SqlConnection cnx = new SqlConnection("Data Source=10.167.229.6; User Id = cnxtest; password = cnxtest; Initial Catalog = CreditCelesteAP");
@@ -23,7 +23,6 @@ namespace CreditCeleste // AP
             // Enregistre le client dans la BDD
             try
             {
-               
                 cnx.Open();
                 SqlCommand cmd = new SqlCommand("insertClient", cnx);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -294,7 +293,7 @@ namespace CreditCeleste // AP
 
         }
 
-        public static void insertCredit(string montantCredit, string tauxCredit, string dureeCredit, string mensualiteCredit, int numVendeur, int codeClient, string codeValidation)
+        public static void insertCredit(string montantCredit, string tauxCredit, string dureeCredit, string mensualiteCredit, int numVendeur, int codeClient, string codeValidation, string codeColl)
         {
             try
             {
@@ -342,6 +341,10 @@ namespace CreditCeleste // AP
 
                 param.Value = codeValidation;
 
+                param = cmd.Parameters.Add("@codeCollab", SqlDbType.VarChar, 50);
+
+                param.Value = codeColl;
+
 
                 cmd.ExecuteNonQuery();
 
@@ -373,7 +376,7 @@ namespace CreditCeleste // AP
 
                 while (oReader.Read())
                 {
-                    Globale.uneConcession = new Concession(Convert.ToString(oReader["codeConcession"]), Convert.ToString(oReader["nomConcession"]), Convert.ToString(oReader["telConcession"]), Convert.ToString(oReader["emailConcession"]), Globale.laRegion, Globale.laVille, Convert.ToString(oReader["stockVehicule"]));
+                    Globale.uneConcession = new Concession(Convert.ToString(oReader["codeConcession"]), Convert.ToString(oReader["nomConcession"]), Convert.ToString(oReader["telConcession"]), Convert.ToString(oReader["emailConcession"]), Globale.laRegion, Globale.laVille, Convert.ToString(oReader["stockVehicule"]), Convert.ToString(oReader["codeCollab"]), Convert.ToString(oReader["nomCollab"]), Convert.ToString(oReader["prenomCollab"]));
                     //Console.WriteLine(Convert.ToString(oReader["villeAgence"]));
                    
                 }

@@ -15,6 +15,9 @@ namespace CreditCeleste  // Mon tp
         private string regionConcession;
         private string villeConcession;
         private string stockVehicule;
+        private string codeCollab;
+        private string nomCollab;
+        private string prenomCollab;
 
 
         // collection de vendeurs
@@ -35,7 +38,7 @@ namespace CreditCeleste  // Mon tp
             villeConcession = lavilleConcession;
         }
 
-        public Concession(string codeC,string NomConcession, string telConc, string mailConc, string laRegionConcession, string lavilleConcession, string stock)
+        public Concession(string codeC,string NomConcession, string telConc, string mailConc, string laRegionConcession, string lavilleConcession, string stock, string codeColl, string nomColl, string prenomColl)
         {
             codeConcession = codeC;
             monNomConcession = NomConcession;
@@ -44,6 +47,9 @@ namespace CreditCeleste  // Mon tp
             regionConcession = laRegionConcession;
             villeConcession = lavilleConcession;
             stockVehicule = stock;
+            codeCollab = codeColl;
+            nomCollab = nomColl;
+            prenomCollab = prenomColl;
         }
 
         // -- Mutateurs 
@@ -122,6 +128,38 @@ namespace CreditCeleste  // Mon tp
         {
             return stockVehicule;
         }
+
+        public void setCodeCollab(string codeColl)
+        {
+            codeCollab = codeColl;
+        }
+
+        public string getCodeCollab()
+        {
+            return codeCollab;
+        }
+
+
+        public void setNomCollab(string nomColl)
+        {
+            nomCollab = nomColl;
+        }
+
+        public string getNomCollab()
+        {
+            return nomCollab;
+        }
+
+        public void setPrenomCollab(string prenomColl)
+        {
+            prenomCollab = prenomColl;
+        }
+
+        public string getPrenomCollab()
+        {
+            return prenomCollab;
+        }
+
 
         // pour rajouter un vendeur
         public void ajoutVendeur(Vendeur unVendeur)

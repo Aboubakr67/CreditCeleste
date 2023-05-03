@@ -74,6 +74,7 @@ namespace CreditCeleste
                     }
                     int numvendeur = Persistance.RecupNumVendeurBDD();
                     int codeClient = Persistance.RecupCodeClientBDD();
+                    string codeCollab = Globale.uneConcession.getCodeCollab();
                     string codeValidation = "E";
                     //Console.WriteLine("montant : " + Convert.ToString(montantCredit));
                     //Console.WriteLine("tauxCredit : " + Convert.ToString(tauxCredit));
@@ -82,7 +83,7 @@ namespace CreditCeleste
                     //Console.WriteLine("num vendeur : " + numvendeur);
                     //Console.WriteLine("codeClient : " + codeClient);
                     //Console.WriteLine("codeValidation : " + codeValidation);
-                    Persistance.insertCredit(Convert.ToString(montantCredit), Convert.ToString(tauxCredit), Convert.ToString(dureeCredit), Convert.ToString(mensualiteCredit), numvendeur, codeClient, codeValidation);
+                    Persistance.insertCredit(Convert.ToString(montantCredit), Convert.ToString(tauxCredit), Convert.ToString(dureeCredit), Convert.ToString(mensualiteCredit), numvendeur, codeClient, codeValidation, codeCollab);
                     MessageBox.Show("Le crédit à bien été enregistré.", "Information");
 
                 }
@@ -306,7 +307,10 @@ namespace CreditCeleste
             }
         }
 
+        private void lblVille_Click(object sender, EventArgs e)
+        {
 
+        }
     }
    }
 

@@ -148,6 +148,7 @@ namespace CreditCeleste
             this.lblVille.Size = new System.Drawing.Size(35, 13);
             this.lblVille.TabIndex = 38;
             this.lblVille.Text = "label2";
+            this.lblVille.Click += new System.EventHandler(this.lblVille_Click);
             // 
             // lblRegion
             // 

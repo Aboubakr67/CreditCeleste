@@ -57,6 +57,7 @@ namespace CreditCeleste
             this.lblVille = new System.Windows.Forms.Label();
             this.lblVerifSaisie = new System.Windows.Forms.Label();
             this.lblNomConcession = new System.Windows.Forms.Label();
+            this.lblnomcollab = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelVendeur
@@ -301,11 +302,21 @@ namespace CreditCeleste
             this.lblNomConcession.TabIndex = 38;
             this.lblNomConcession.Text = "label2";
             // 
+            // lblnomcollab
+            // 
+            this.lblnomcollab.AutoSize = true;
+            this.lblnomcollab.Location = new System.Drawing.Point(13, 96);
+            this.lblnomcollab.Name = "lblnomcollab";
+            this.lblnomcollab.Size = new System.Drawing.Size(35, 13);
+            this.lblnomcollab.TabIndex = 39;
+            this.lblnomcollab.Text = "label2";
+            // 
             // FrmClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblnomcollab);
             this.Controls.Add(this.lblNomConcession);
             this.Controls.Add(this.lblVerifSaisie);
             this.Controls.Add(this.lblVille);
@@ -372,5 +383,6 @@ namespace CreditCeleste
         private System.Windows.Forms.Label lblVille;
         private System.Windows.Forms.Label lblVerifSaisie;
         private System.Windows.Forms.Label lblNomConcession;
+        private System.Windows.Forms.Label lblnomcollab;
     }
 }

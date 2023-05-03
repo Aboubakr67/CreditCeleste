@@ -45,12 +45,14 @@ namespace CreditCeleste
         {
             lblRegion.Text = Globale.laRegion;
             lblVille.Text = Globale.laVille;
+            
 
             cboVendeur.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCidt.DropDownStyle = ComboBoxStyle.DropDownList;
 
             Persistance.recupereConcByRegionVille(Globale.laRegion, Globale.laVille);
             lblNomConcession.Text = Globale.uneConcession.getMonNomConcession();
+            lblnomcollab.Text = Globale.uneConcession.getNomCollab() + " " + Globale.uneConcession.getPrenomCollab();
 
             // -- Rajout du vendeur
             Persistance.RecupVendeurBDD(Globale.uneConcession.getCodeConcession());
