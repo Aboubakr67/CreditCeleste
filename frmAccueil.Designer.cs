@@ -29,6 +29,7 @@ namespace CreditCeleste
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccueil));
             this.cmdIntroduction = new System.Windows.Forms.Button();
             this.cmdEtude = new System.Windows.Forms.Button();
             this.cmdRelance = new System.Windows.Forms.Button();
@@ -37,56 +38,96 @@ namespace CreditCeleste
             // 
             // cmdIntroduction
             // 
-            this.cmdIntroduction.Location = new System.Drawing.Point(173, 297);
+            this.cmdIntroduction.BackColor = System.Drawing.Color.Transparent;
+            this.cmdIntroduction.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.cmdIntroduction.FlatAppearance.BorderSize = 2;
+            this.cmdIntroduction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.cmdIntroduction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.cmdIntroduction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdIntroduction.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdIntroduction.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cmdIntroduction.Location = new System.Drawing.Point(13, 497);
+            this.cmdIntroduction.Margin = new System.Windows.Forms.Padding(4);
             this.cmdIntroduction.Name = "cmdIntroduction";
-            this.cmdIntroduction.Size = new System.Drawing.Size(99, 41);
+            this.cmdIntroduction.Size = new System.Drawing.Size(276, 104);
             this.cmdIntroduction.TabIndex = 0;
             this.cmdIntroduction.Text = "&Introduction";
-            this.cmdIntroduction.UseVisualStyleBackColor = true;
+            this.cmdIntroduction.UseVisualStyleBackColor = false;
             this.cmdIntroduction.Click += new System.EventHandler(this.cmdIntroduction_Click);
+            this.cmdIntroduction.MouseEnter += new System.EventHandler(this.cmdIntroduction_MouseEnter);
+            this.cmdIntroduction.MouseLeave += new System.EventHandler(this.cmdIntroduction_MouseLeave);
             // 
             // cmdEtude
             // 
-            this.cmdEtude.Location = new System.Drawing.Point(320, 297);
+            this.cmdEtude.BackColor = System.Drawing.Color.Transparent;
+            this.cmdEtude.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.cmdEtude.FlatAppearance.BorderSize = 2;
+            this.cmdEtude.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.cmdEtude.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.cmdEtude.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdEtude.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdEtude.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cmdEtude.Location = new System.Drawing.Point(399, 497);
+            this.cmdEtude.Margin = new System.Windows.Forms.Padding(4);
             this.cmdEtude.Name = "cmdEtude";
-            this.cmdEtude.Size = new System.Drawing.Size(120, 41);
+            this.cmdEtude.Size = new System.Drawing.Size(276, 104);
             this.cmdEtude.TabIndex = 1;
             this.cmdEtude.Text = "&Etude";
-            this.cmdEtude.UseVisualStyleBackColor = true;
+            this.cmdEtude.UseVisualStyleBackColor = false;
             this.cmdEtude.Click += new System.EventHandler(this.cmdEtude_Click);
+            this.cmdEtude.MouseEnter += new System.EventHandler(this.cmdEtude_MouseEnter);
+            this.cmdEtude.MouseLeave += new System.EventHandler(this.cmdEtude_MouseLeave);
             // 
             // cmdRelance
             // 
-            this.cmdRelance.Location = new System.Drawing.Point(497, 297);
+            this.cmdRelance.BackColor = System.Drawing.Color.Transparent;
+            this.cmdRelance.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.cmdRelance.FlatAppearance.BorderSize = 2;
+            this.cmdRelance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.cmdRelance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.cmdRelance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdRelance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRelance.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cmdRelance.Location = new System.Drawing.Point(778, 497);
+            this.cmdRelance.Margin = new System.Windows.Forms.Padding(4);
             this.cmdRelance.Name = "cmdRelance";
-            this.cmdRelance.Size = new System.Drawing.Size(98, 41);
+            this.cmdRelance.Size = new System.Drawing.Size(276, 104);
             this.cmdRelance.TabIndex = 2;
             this.cmdRelance.Text = "&Relance";
-            this.cmdRelance.UseVisualStyleBackColor = true;
+            this.cmdRelance.UseVisualStyleBackColor = false;
+            this.cmdRelance.MouseEnter += new System.EventHandler(this.cmdRelance_MouseEnter);
+            this.cmdRelance.MouseLeave += new System.EventHandler(this.cmdRelance_MouseLeave);
             // 
             // lblMonAppli
             // 
-            this.lblMonAppli.AutoSize = true;
-            this.lblMonAppli.Location = new System.Drawing.Point(631, 13);
+            this.lblMonAppli.BackColor = System.Drawing.Color.Transparent;
+            this.lblMonAppli.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonAppli.ForeColor = System.Drawing.Color.White;
+            this.lblMonAppli.Location = new System.Drawing.Point(698, 9);
+            this.lblMonAppli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMonAppli.Name = "lblMonAppli";
-            this.lblMonAppli.Size = new System.Drawing.Size(35, 13);
+            this.lblMonAppli.Size = new System.Drawing.Size(356, 36);
             this.lblMonAppli.TabIndex = 3;
-            this.lblMonAppli.Text = "label1";
+            this.lblMonAppli.Text = "Nom";
+            this.lblMonAppli.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // frmAccueil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1067, 614);
             this.Controls.Add(this.lblMonAppli);
             this.Controls.Add(this.cmdRelance);
             this.Controls.Add(this.cmdEtude);
             this.Controls.Add(this.cmdIntroduction);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAccueil";
             this.Text = "Accueil";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
