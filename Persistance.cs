@@ -13,7 +13,7 @@ namespace CreditCeleste // AP
     {
 
 
-        public static SqlConnection cnx = new SqlConnection("Data Source=192.168.1.70;User Id=cnxtest;password=cnxtest;Initial Catalog=CreditCelesteAP;");
+        public static SqlConnection cnx = new SqlConnection("Data Source=S922P29;User Id=cnxtest;password=cnxtest;Initial Catalog=CreditCelesteAP;");
 
         //public static SqlConnection cnx = new SqlConnection("Data Source=10.129.187.129; User Id = cnxtest; password = cnxtest; Initial Catalog = CreditCelesteAP");
         //public static SqlConnection cnx = new SqlConnection("Data Source=10.167.229.6; User Id = cnxtest; password = cnxtest; Initial Catalog = CreditCelesteAP");
@@ -160,14 +160,15 @@ namespace CreditCeleste // AP
         }
 
         // Permet d'afficher tous les crédit de la BDD
-        public static void RecupToutLesCreditDeLaBDD()
+        public static void affCreditEtude(string codeConcession)
         {
 
          try
             {
                 Persistance.cnx.Open();
-                SqlCommand cmd = new SqlCommand("affToutLesCreditBDD", Persistance.cnx);
+                SqlCommand cmd = new SqlCommand("affCreditEtude", Persistance.cnx);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codeConcession", codeConcession);
 
                 SqlDataReader oReader = cmd.ExecuteReader();
 
@@ -175,11 +176,41 @@ namespace CreditCeleste // AP
                 {
                     //Console.WriteLine(oReader["nomClient"] + " " + oReader["prenomClient"] + " " + oReader["montantCredit"] + " " + oReader["tauxCredit"] + " " + oReader["dureeCredit"] + " " + oReader["mensualite"] + " " + oReader["dateSaisie"] + " " + oReader["nomVendeur"]);
 
-                    
 
                     //aff = "Nom : " + oReader["nomClient"] + " " + " | " + " Prenom : " + oReader["prenomClient"] + " " + " | " + " Montant : " + oReader["montantCredit"] + " " + " | " + " Taux : " + oReader["tauxCredit"] + " " + " | " + " Duree : " + oReader["dureeCredit"] + " " + " | " + " Mensualite : " + oReader["mensualite"] + " " + " | " + " Date : " + oReader["dateSaisie"] + " " + " | " + " Vendeur : " + oReader["nomVendeur"];
-                    Globale.lesCreditsDeLaBDD.Add("Nom : " + oReader["nomClient"] + " " + " | " + " Prenom : " + oReader["prenomClient"] + " " + " | " + " Montant : " + oReader["montantCredit"] + " " + " | " + " Taux : " + oReader["tauxCredit"] + " " + " | " + " Duree : " + oReader["dureeCredit"] + " " + " | " + " Mensualite : " + oReader["mensualite"] + " " + " | " + " Date : " + oReader["dateSaisie"] + " " + " | " + " Vendeur : " + oReader["nomVendeur"]);
+
+                    Globale.lesCreditEtude.Add(new Credit(Convert.ToInt32(oReader["numCredit"]), Convert.ToString(oReader["nomClient"]),
+                        Convert.ToString(oReader["prenomClient"]), Convert.ToDouble(oReader["montantCredit"]), Convert.ToDouble(oReader["dureeCredit"]),
+                        Convert.ToDouble(oReader["tauxCredit"]), Convert.ToDouble(oReader["mensualite"])));
+              
                 }
+
+                Persistance.cnx.Close();
+
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur: " + ex.Message);
+                throw;
+            }
+
+        }
+
+
+
+        public static void EtudierCredit(int numCredit,string codeValidation)
+        {
+
+            try
+            {
+                Persistance.cnx.Open();
+                SqlCommand cmd = new SqlCommand("EtudierCredit", Persistance.cnx);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@numCredit", numCredit);
+                cmd.Parameters.AddWithValue("@codeValidation", codeValidation);
+
+                SqlDataReader oReader = cmd.ExecuteReader();
 
                 Persistance.cnx.Close();
 
@@ -293,7 +324,7 @@ namespace CreditCeleste // AP
 
         }
 
-        public static void insertCredit(string montantCredit, string tauxCredit, string dureeCredit, string mensualiteCredit, int numVendeur, int codeClient, string codeValidation, string codeColl)
+        public static void insertCredit(string montantCredit, string tauxCredit, string dureeCredit, string mensualiteCredit, int numVendeur, int codeClient, string codeValidation, string codeColl, string codeConcess)
         {
             try
             {
@@ -344,6 +375,10 @@ namespace CreditCeleste // AP
                 param = cmd.Parameters.Add("@codeCollab", SqlDbType.VarChar, 50);
 
                 param.Value = codeColl;
+
+                param = cmd.Parameters.Add("@codeConcession", SqlDbType.VarChar, 50);
+
+                param.Value = codeConcess;
 
 
                 cmd.ExecuteNonQuery();

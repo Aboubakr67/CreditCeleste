@@ -40,7 +40,7 @@ namespace CreditCeleste
             // appel de la fenetre Introduction
 
             frmChoixConcession fenChoixConcession = new frmChoixConcession();
-
+            fenChoixConcession.PagePrecedente = "Introduction";
             fenChoixConcession.Show();
             //this.Close();      // on ferme la fenetre
 
@@ -52,10 +52,15 @@ namespace CreditCeleste
 
         private void cmdEtude_Click(object sender, EventArgs e)
         {
-            FrmCreditDeLaBDD fenCreditDeLaBDD = new FrmCreditDeLaBDD();
-            fenCreditDeLaBDD.Show();
+            //frmEtude fenEtude = new frmEtude();
+            //fenEtude.Show();
+            //this.Hide();
+
+            frmChoixConcession fenChoixConcession = new frmChoixConcession();
+            fenChoixConcession.PagePrecedente = "Etude";
+            fenChoixConcession.Show();
             this.Hide();
-            
+
         }
     }
 }

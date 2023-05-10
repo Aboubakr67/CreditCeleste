@@ -75,6 +75,7 @@ namespace CreditCeleste
                     int numvendeur = Persistance.RecupNumVendeurBDD();
                     int codeClient = Persistance.RecupCodeClientBDD();
                     string codeCollab = Globale.uneConcession.getCodeCollab();
+                    string codeConcession = Globale.uneConcession.getCodeConcession();
                     string codeValidation = "E";
                     //Console.WriteLine("montant : " + Convert.ToString(montantCredit));
                     //Console.WriteLine("tauxCredit : " + Convert.ToString(tauxCredit));
@@ -83,7 +84,7 @@ namespace CreditCeleste
                     //Console.WriteLine("num vendeur : " + numvendeur);
                     //Console.WriteLine("codeClient : " + codeClient);
                     //Console.WriteLine("codeValidation : " + codeValidation);
-                    Persistance.insertCredit(Convert.ToString(montantCredit), Convert.ToString(tauxCredit), Convert.ToString(dureeCredit), Convert.ToString(mensualiteCredit), numvendeur, codeClient, codeValidation, codeCollab);
+                    Persistance.insertCredit(Convert.ToString(montantCredit), Convert.ToString(tauxCredit), Convert.ToString(dureeCredit), Convert.ToString(mensualiteCredit), numvendeur, codeClient, codeValidation, codeCollab, codeConcession);
                     MessageBox.Show("Le crédit à bien été enregistré.", "Information");
 
                 }
@@ -266,24 +267,20 @@ namespace CreditCeleste
             Globale.unClientVoit = null;
             Globale.uneConcession = null;
             Globale.uneVoiture = null;
+
             Globale.laRegion = "";
             Globale.laVille = "";
+
             Globale.lesCredits.Clear();
             Globale.lesRegions.Clear();
             Globale.lesVilles.Clear();
-            Globale.lesCreditsDeLaBDD.Clear();
-            
-
-
+            Globale.lesCreditEtude.Clear();
             Globale.lesVoitures.Clear();
 
 
-
             frmAccueil fenAccueil = new frmAccueil();
-
             fenAccueil.Show();
             //this.Close();      // on ferme la fenetre
-
 
             this.Hide();
         }

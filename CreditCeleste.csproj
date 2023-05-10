@@ -116,11 +116,23 @@
     <Compile Include="FrmCreditDeLaBDD.Designer.cs">
       <DependentUpon>FrmCreditDeLaBDD.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEtude.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEtude.Designer.cs">
+      <DependentUpon>frmEtude.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIntroduction.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmIntroduction.Designer.cs">
       <DependentUpon>frmIntroduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRelance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelance.Designer.cs">
+      <DependentUpon>frmRelance.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSaisieBien.cs">
       <SubType>Form</SubType>
@@ -155,8 +167,14 @@
     <EmbeddedResource Include="FrmCreditDeLaBDD.resx">
       <DependentUpon>FrmCreditDeLaBDD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEtude.resx">
+      <DependentUpon>frmEtude.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIntroduction.resx">
       <DependentUpon>frmIntroduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRelance.resx">
+      <DependentUpon>frmRelance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSaisieBien.resx">
       <DependentUpon>frmSaisieBien.cs</DependentUpon>

@@ -26,15 +26,15 @@ namespace CreditCeleste
 
         private void FrmCreditDeLaBDD_Load(object sender, EventArgs e)
         {
-            Persistance.RecupToutLesCreditDeLaBDD();
+            //Persistance.affCreditEtude();
 
 
-            lstCreditDeLaBDD.Items.Clear();
+            //lstCreditDeLaBDD.Items.Clear();
 
-            foreach (string xCreditBDD in Globale.lesCreditsDeLaBDD)
-            {
-                lstCreditDeLaBDD.Items.Add(xCreditBDD);
-            }
+            //foreach (Credit xCredit in Globale.lesCreditEtude)
+            //{
+            //    lstCreditDeLaBDD.Items.Add(xCredit);
+            //}
 
 
         }

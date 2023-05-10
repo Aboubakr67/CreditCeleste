@@ -9,14 +9,18 @@
     '
     ' - attributs privée
 
+    Private monNumCredit As Integer
+    Private monNomClient As String
+    Private monPrenomClient As String
 
     Private monMontant As Double    ' montant financiée
     Private monDuree As Double
     Private monTaux As Double
     Private monMensualite As Double
 
-    Private monDateDebut As Date
-    Private monDateFin As Date
+
+    'Private monDateDebut As Date
+    'Private monDateFin As Date
 
     ' constructeur
     Sub New()
@@ -50,17 +54,37 @@
     End Sub
 
 
-    Sub New(montant As Double, duree As Double, taux As Double, mensualite As Double, dateDebut As Date, dateFin As Date)
+    Sub New(numCredit As Integer, nomClient As String, prenomClient As String, montant As Double, duree As Double, taux As Double, mensualite As Double)
+
+        monNumCredit = numCredit
+        monNomClient = nomClient
+        monPrenomClient = prenomClient
 
         monMontant = montant
         monDuree = duree
         monTaux = taux
         monMensualite = mensualite
-        monDateDebut = dateDebut
-        monDateFin = dateFin
+
 
     End Sub
 
+    Public Function getNumCredit() As Integer
+
+        Return monNumCredit
+
+    End Function
+
+    Public Function getNomClient() As String
+
+        Return monNomClient
+
+    End Function
+
+    Public Function getPrenomClient() As String
+
+        Return monPrenomClient
+
+    End Function
 
     Public Function getMontant() As Double
 
@@ -81,17 +105,26 @@
 
     End Function
 
-    Public Function getDateDebut() As Date
 
-        Return monDateDebut
+    'Public Function getDateDebut() As Date
 
-    End Function
+    '    Return monDateDebut
 
-    Public Function getDateFin() As Date
+    'End Function
 
-        Return monDateFin
+    'Public Function getDateFin() As Date
 
-    End Function
+    '    Return monDateFin
+
+    'End Function
+
+    Sub setNomClient(nom As String)
+        monNomClient = nom
+    End Sub
+
+    Sub setPrenomClient(prenom As String)
+        monPrenomClient = prenom
+    End Sub
 
     Sub setMontant(mont As Double)
         monMontant = mont
@@ -105,13 +138,14 @@
         monTaux = taux
     End Sub
 
-    Sub setDateDebut(debut As Date)
-        monDateDebut = debut
-    End Sub
 
-    Sub setDateFin(fin As Date)
-        monDateFin = fin
-    End Sub
+    'Sub setDateDebut(debut As Date)
+    '    monDateDebut = debut
+    'End Sub
+
+    'Sub setDateFin(fin As Date)
+    '    monDateFin = fin
+    'End Sub
 
     Public Function getMensualite() As Double  ' ap
 

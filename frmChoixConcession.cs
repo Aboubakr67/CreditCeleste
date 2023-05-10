@@ -17,6 +17,8 @@ namespace CreditCeleste
             InitializeComponent();
         }
 
+        public string PagePrecedente { get; set; }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -25,16 +27,23 @@ namespace CreditCeleste
         private void cmdValider_Click(object sender, EventArgs e)
         {
 
-            if(verifSaisie())
+            if (verifSaisie())
             {
-               
-                FrmClient fenClient = new FrmClient();
-
-                fenClient.Show();
-                //this.Close();      // on ferme la fenetre
-
-
-                this.Hide();   // pour cacher la fenetre
+                if(PagePrecedente == "Introduction")
+                {
+                    FrmClient fenClient = new FrmClient();
+                    fenClient.Show();
+                    //this.Close();      // on ferme la fenetre
+                    this.Hide();   // pour cacher la fenetre
+                }
+                else
+                {
+                    frmEtude fenEtude = new frmEtude();
+                    fenEtude.Show();
+                    //this.Close();      // on ferme la fenetre
+                    this.Hide();   // pour cacher la fenetre
+                }
+                
             }
             
 

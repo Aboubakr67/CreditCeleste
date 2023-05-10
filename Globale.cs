@@ -47,7 +47,7 @@ namespace CreditCeleste     // Projet APP Projet
         public static string laVille;
 
         // liste de tout les credits de la BDD
-        public static List<string> lesCreditsDeLaBDD = new List<string>();
+        public static List<Credit> lesCreditEtude = new List<Credit>();
 
 
         public static byte[] ConvertImageToBytes(Image img)
