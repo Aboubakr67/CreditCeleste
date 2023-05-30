@@ -36,10 +36,16 @@ namespace CreditCeleste
                     //this.Close();      // on ferme la fenetre
                     this.Hide();   // pour cacher la fenetre
                 }
-                else
                 {
                     frmEtude fenEtude = new frmEtude();
                     fenEtude.Show();
+                    //this.Close();      // on ferme la fenetre
+                    this.Hide();   // pour cacher la fenetre
+                }
+                else if(PagePrecedente == "Relance")
+                {
+                    frmRelance fenRelance = new frmRelance();
+                    fenRelance.Show();
                     //this.Close();      // on ferme la fenetre
                     this.Hide();   // pour cacher la fenetre
                 }

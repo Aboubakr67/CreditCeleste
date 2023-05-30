@@ -37,9 +37,7 @@ namespace CreditCeleste
             // 
             // cmdIntroduction
             // 
-            this.cmdIntroduction.Location = new System.Drawing.Point(173, 297);
             this.cmdIntroduction.Name = "cmdIntroduction";
-            this.cmdIntroduction.Size = new System.Drawing.Size(99, 41);
             this.cmdIntroduction.TabIndex = 0;
             this.cmdIntroduction.Text = "&Introduction";
             this.cmdIntroduction.UseVisualStyleBackColor = true;
@@ -47,9 +45,7 @@ namespace CreditCeleste
             // 
             // cmdEtude
             // 
-            this.cmdEtude.Location = new System.Drawing.Point(320, 297);
             this.cmdEtude.Name = "cmdEtude";
-            this.cmdEtude.Size = new System.Drawing.Size(120, 41);
             this.cmdEtude.TabIndex = 1;
             this.cmdEtude.Text = "&Etude";
             this.cmdEtude.UseVisualStyleBackColor = true;
@@ -57,31 +53,27 @@ namespace CreditCeleste
             // 
             // cmdRelance
             // 
-            this.cmdRelance.Location = new System.Drawing.Point(497, 297);
             this.cmdRelance.Name = "cmdRelance";
-            this.cmdRelance.Size = new System.Drawing.Size(98, 41);
             this.cmdRelance.TabIndex = 2;
             this.cmdRelance.Text = "&Relance";
             this.cmdRelance.UseVisualStyleBackColor = true;
+            this.cmdRelance.Click += new System.EventHandler(this.cmdRelance_Click);
             // 
             // lblMonAppli
             // 
             this.lblMonAppli.AutoSize = true;
-            this.lblMonAppli.Location = new System.Drawing.Point(631, 13);
             this.lblMonAppli.Name = "lblMonAppli";
-            this.lblMonAppli.Size = new System.Drawing.Size(35, 13);
             this.lblMonAppli.TabIndex = 3;
             this.lblMonAppli.Text = "label1";
             // 
             // frmAccueil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblMonAppli);
             this.Controls.Add(this.cmdRelance);
             this.Controls.Add(this.cmdEtude);
             this.Controls.Add(this.cmdIntroduction);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAccueil";
             this.Text = "Accueil";
             this.Load += new System.EventHandler(this.Form1_Load);

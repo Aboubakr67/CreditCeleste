@@ -13,7 +13,6 @@ namespace CreditCeleste // AP
     {
 
 
-        public static SqlConnection cnx = new SqlConnection("Data Source=S922P29;User Id=cnxtest;password=cnxtest;Initial Catalog=CreditCelesteAP;");
 
         //public static SqlConnection cnx = new SqlConnection("Data Source=10.129.187.129; User Id = cnxtest; password = cnxtest; Initial Catalog = CreditCelesteAP");
         //public static SqlConnection cnx = new SqlConnection("Data Source=10.167.229.6; User Id = cnxtest; password = cnxtest; Initial Catalog = CreditCelesteAP");
@@ -645,6 +644,73 @@ namespace CreditCeleste // AP
                 MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //throw;
             }
+        }
+
+        // Permet d'afficher tous les crédit de la BDD
+        public static void affCreditRelance(string codeConcession)
+        {
+
+            try
+            {
+                Persistance.cnx.Open();
+                SqlCommand cmd = new SqlCommand("affCreditRelance", Persistance.cnx);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codeConcession", codeConcession);
+
+                SqlDataReader oReader = cmd.ExecuteReader();
+
+                while (oReader.Read())
+                {
+                    //Console.WriteLine(oReader["nomClient"] + " " + oReader["prenomClient"] + " " + oReader["montantCredit"] + " " + oReader["tauxCredit"] + " " + oReader["dureeCredit"] + " " + oReader["mensualite"] + " " + oReader["dateSaisie"] + " " + oReader["nomVendeur"]);
+
+
+                    //aff = "Nom : " + oReader["nomClient"] + " " + " | " + " Prenom : " + oReader["prenomClient"] + " " + " | " + " Montant : " + oReader["montantCredit"] + " " + " | " + " Taux : " + oReader["tauxCredit"] + " " + " | " + " Duree : " + oReader["dureeCredit"] + " " + " | " + " Mensualite : " + oReader["mensualite"] + " " + " | " + " Date : " + oReader["dateSaisie"] + " " + " | " + " Vendeur : " + oReader["nomVendeur"];
+
+                    Globale.lesCreditRelance.Add(new Credit(Convert.ToInt32(oReader["numCredit"]), Convert.ToString(oReader["nomClient"]),
+                        Convert.ToString(oReader["prenomClient"]), Convert.ToDouble(oReader["montantCredit"]), Convert.ToDouble(oReader["dureeCredit"]),
+                        Convert.ToDouble(oReader["tauxCredit"]), Convert.ToDouble(oReader["mensualite"])));
+
+                }
+
+                Persistance.cnx.Close();
+
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur: " + ex.Message);
+                throw;
+            }
+
+        }
+
+        public static void relancerCredit(string numCredit, string codeValidation, string mensualite, string tauxCredit, string dureeCredit, string montantCredit)
+        {
+
+            try
+            {
+                Persistance.cnx.Open();
+                SqlCommand cmd = new SqlCommand("relancerCredit", Persistance.cnx);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@numCredit", numCredit);
+                cmd.Parameters.AddWithValue("@codeValidation", codeValidation);
+                cmd.Parameters.AddWithValue("@mensualite", mensualite);
+                cmd.Parameters.AddWithValue("@tauxCredit", tauxCredit);
+                cmd.Parameters.AddWithValue("@dureeCredit", dureeCredit);
+                cmd.Parameters.AddWithValue("@montantCredit", montantCredit);
+
+                SqlDataReader oReader = cmd.ExecuteReader();
+
+                Persistance.cnx.Close();
+
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur: " + ex.Message);
+                throw;
+            }
+
         }
 
 

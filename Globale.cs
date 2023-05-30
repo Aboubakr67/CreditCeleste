@@ -19,7 +19,6 @@ namespace CreditCeleste     // Projet APP Projet
 
         // Gestion de mon application
 
-        public static string monApplication = "Aboubakr";
 
         // gestion de la voiture
         public static Voiture uneVoiture;  // la voiture en cours de traitement
@@ -46,8 +45,10 @@ namespace CreditCeleste     // Projet APP Projet
         // stocke la ville dans la variable globale laVille
         public static string laVille;
 
-        // liste de tout les credits de la BDD
         public static List<Credit> lesCreditEtude = new List<Credit>();
+
+        //liste de tout les credits qui ont besoin d'être relancé de la BDD
+        public static List<Credit> lesCreditRelance = new List<Credit>();
 
 
         public static byte[] ConvertImageToBytes(Image img)

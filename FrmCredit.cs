@@ -24,11 +24,12 @@ namespace CreditCeleste
             this.Hide();
         }
 
-        private void cmdJenregistre_Click(object sender, EventArgs e)
+        public string PagePrecedente { get; set; }
+
+        public void modifCreditRelance()
         {
-            if (verifSaisie())
+            if (verifSaisieCreditRelance())
             {
-            
                 double montantCredit = 0;
                 double dureeCredit = 0;
                 double tauxCredit = 0;
@@ -36,32 +37,14 @@ namespace CreditCeleste
 
                 try
                 {
-
-                    Persistance.insertClient();
-
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Erreur: " + ex.Message);
-                    throw;
-                }
-
-
-
-                try
-                {
+                    string codeValidation = "E";
 
                     foreach (Credit xCredit in Globale.lesCredits)
                     {
 
                         if (Convert.ToString(lsbCredit.SelectedItem) == xCredit.getInfos())
                         {
-                            //Console.WriteLine(xCredit.getMontant());
-                            //Console.WriteLine(xCredit.getDuree());
-                            //Console.WriteLine(xCredit.getTaux());
-                            ///Console.WriteLine(xCredit.getMensualite());
-                            //Console.WriteLine(xCredit.getInfos());
-                            //Console.WriteLine(Convert.ToString(lsbCredit.SelectedItem));
+
                             montantCredit = xCredit.getMontant();
                             dureeCredit = xCredit.getDuree();
                             tauxCredit = xCredit.getTaux();
@@ -69,23 +52,9 @@ namespace CreditCeleste
 
                         }
 
-                        //Console.WriteLine(xCredit.getInfos());
-
+                        Persistance.relancerCredit(Convert.ToString(monNumCredit), Convert.ToString(codeValidation), Convert.ToString(mensualiteCredit), Convert.ToString(tauxCredit), Convert.ToString(dureeCredit), Convert.ToString(montantCredit));
                     }
-                    int numvendeur = Persistance.RecupNumVendeurBDD();
-                    int codeClient = Persistance.RecupCodeClientBDD();
-                    string codeCollab = Globale.uneConcession.getCodeCollab();
-                    string codeConcession = Globale.uneConcession.getCodeConcession();
-                    string codeValidation = "E";
-                    //Console.WriteLine("montant : " + Convert.ToString(montantCredit));
-                    //Console.WriteLine("tauxCredit : " + Convert.ToString(tauxCredit));
-                    //Console.WriteLine("duree : " + Convert.ToString(dureeCredit));
-                    //Console.WriteLine("mensualite : " + Convert.ToString(mensualiteCredit));
-                    //Console.WriteLine("num vendeur : " + numvendeur);
-                    //Console.WriteLine("codeClient : " + codeClient);
-                    //Console.WriteLine("codeValidation : " + codeValidation);
-                    Persistance.insertCredit(Convert.ToString(montantCredit), Convert.ToString(tauxCredit), Convert.ToString(dureeCredit), Convert.ToString(mensualiteCredit), numvendeur, codeClient, codeValidation, codeCollab, codeConcession);
-                    MessageBox.Show("Le crédit à bien été enregistré.", "Information");
+                    MessageBox.Show("Le crédit à bien été enregistré.", "Information"); //sinon le msg saffiche 10000 x
 
                 }
                 catch (Exception ex)
@@ -93,12 +62,118 @@ namespace CreditCeleste
                     Console.WriteLine("Erreur: " + ex.Message);
                     throw;
                 }
+            }
+    }
 
+        private void cmdJenregistre_Click(object sender, EventArgs e)
+        {
+            if (PagePrecedente == "Relance")
+            {
+                modifCreditRelance();
+                Console.WriteLine("dans le if");
+            }
+            else
+            {
+                if (verifSaisie())
+                {
+
+                    double montantCredit = 0;
+                    double dureeCredit = 0;
+                    double tauxCredit = 0;
+                    double mensualiteCredit = 0;
+
+                    try
+                    {
+
+                        Persistance.insertClient();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Erreur: " + ex.Message);
+                        throw;
+                    }
+
+
+
+                    try
+                    {
+
+                        foreach (Credit xCredit in Globale.lesCredits)
+                        {
+
+                            if (Convert.ToString(lsbCredit.SelectedItem) == xCredit.getInfos())
+                            {
+                                //Console.WriteLine(xCredit.getMontant());
+                                //Console.WriteLine(xCredit.getDuree());
+                                //Console.WriteLine(xCredit.getTaux());
+                                ///Console.WriteLine(xCredit.getMensualite());
+                                //Console.WriteLine(xCredit.getInfos());
+                                //Console.WriteLine(Convert.ToString(lsbCredit.SelectedItem));
+                                montantCredit = xCredit.getMontant();
+                                dureeCredit = xCredit.getDuree();
+                                tauxCredit = xCredit.getTaux();
+                                mensualiteCredit = xCredit.getMensualite();
+
+                            }
+
+                            //Console.WriteLine(xCredit.getInfos());
+
+                        }
+                        int numvendeur = Persistance.RecupNumVendeurBDD();
+                        int codeClient = Persistance.RecupCodeClientBDD();
+                        string codeCollab = Globale.uneConcession.getCodeCollab();
+                        string codeConcession = Globale.uneConcession.getCodeConcession();
+                        string codeValidation = "E";
+                        //Console.WriteLine("montant : " + Convert.ToString(montantCredit));
+                        //Console.WriteLine("tauxCredit : " + Convert.ToString(tauxCredit));
+                        //Console.WriteLine("duree : " + Convert.ToString(dureeCredit));
+                        //Console.WriteLine("mensualite : " + Convert.ToString(mensualiteCredit));
+                        //Console.WriteLine("num vendeur : " + numvendeur);
+                        //Console.WriteLine("codeClient : " + codeClient);
+                        //Console.WriteLine("codeValidation : " + codeValidation);
+                        Persistance.insertCredit(Convert.ToString(montantCredit), Convert.ToString(tauxCredit), Convert.ToString(dureeCredit), Convert.ToString(mensualiteCredit), numvendeur, codeClient, codeValidation, codeCollab, codeConcession);
+                        MessageBox.Show("Le crédit à bien été enregistré.", "Information");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Erreur: " + ex.Message);
+                        throw;
+                    }
+
+                }
             }
         }
+        int monNumCredit;
 
         private void Credit_Load(object sender, EventArgs e)
         {
+
+            if (PagePrecedente == "Relance")
+            {
+                PagePrecedente = "Relance";
+                cmdInitCredit.Enabled = false;
+                cmdVoiture.Enabled = false;
+                cmdClient.Enabled = false;
+                cmdListeCreditBDD.Enabled = false;
+                foreach (Credit credit in Globale.lesCreditRelance)
+                {
+                    // Initialiser la listBox
+                    lsbCredit.Items.Clear();
+
+                    // Initialiser la collection des credits
+                    Globale.lesCredits.Clear();
+
+                    lsbCredit.Items.Add(credit.getInfos());
+                    monNumCredit = credit.getNumCredit();
+
+
+
+                }
+
+            }
+
             lblRegion.Text = Globale.laRegion;
             lblVille.Text = Globale.laVille;
   
@@ -152,7 +227,34 @@ namespace CreditCeleste
 
         }
 
+        Boolean verifSaisieCreditRelance()
+        {
+            Boolean verif = false;
+            if (txtmontantFinance.Text == "")
+            {
+                txtmontantFinance.Focus();
+                MessageBox.Show("Veuillez saisir le montant du credit", "Erreur de saisie");
+                return verif;
+            }
 
+            if (txtDureeMois.Text == "")
+            {
+                txtDureeMois.Focus();
+                MessageBox.Show("Veuillez saisir la duree du credit !!!", "Erreur de saisie");
+                return verif;
+            }
+
+            if (txttaux.Text == "")
+            {
+                txttaux.Focus();
+                MessageBox.Show("Veuillez saisir le taux du credit !!!", "Erreur de saisie");
+                return verif;
+            }
+
+            return true;
+
+
+        }
         Boolean verifSaisie()
         {
             // permet de verifier si les champs sont correctement renseigner
@@ -305,6 +407,11 @@ namespace CreditCeleste
         }
 
         private void lblVille_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtmensualite_TextChanged(object sender, EventArgs e)
         {
 
         }

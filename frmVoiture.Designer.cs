@@ -33,8 +33,10 @@ namespace CreditCeleste
             this.lblNumeroImmat = new System.Windows.Forms.Label();
             this.lblNumeroSerie = new System.Windows.Forms.Label();
             this.lblPuissance = new System.Windows.Forms.Label();
+            this.cmdJenregistre = new System.Windows.Forms.Button();
             this.cmdIntroduction = new System.Windows.Forms.Button();
             this.cmdCredit = new System.Windows.Forms.Button();
+            this.cmdVersBdd = new System.Windows.Forms.Button();
             this.cboxMarque = new System.Windows.Forms.ComboBox();
             this.lblMarque = new System.Windows.Forms.Label();
             this.lblModele = new System.Windows.Forms.Label();
@@ -92,6 +94,16 @@ namespace CreditCeleste
             this.lblPuissance.TabIndex = 7;
             this.lblPuissance.Text = "Puissance";
             // 
+            // cmdJenregistre
+            // 
+            this.cmdJenregistre.Location = new System.Drawing.Point(21, 284);
+            this.cmdJenregistre.Name = "cmdJenregistre";
+            this.cmdJenregistre.Size = new System.Drawing.Size(107, 33);
+            this.cmdJenregistre.TabIndex = 17;
+            this.cmdJenregistre.Text = "&J\'enregistre (Objet)";
+            this.cmdJenregistre.UseVisualStyleBackColor = true;
+            this.cmdJenregistre.Click += new System.EventHandler(this.cmdJenregistre_Click);
+            // 
             // cmdIntroduction
             // 
             this.cmdIntroduction.Location = new System.Drawing.Point(21, 339);
@@ -111,6 +123,16 @@ namespace CreditCeleste
             this.cmdCredit.Text = "Crédit";
             this.cmdCredit.UseVisualStyleBackColor = true;
             this.cmdCredit.Click += new System.EventHandler(this.cmdCredit_Click);
+            // 
+            // cmdVersBdd
+            // 
+            this.cmdVersBdd.Location = new System.Drawing.Point(175, 284);
+            this.cmdVersBdd.Name = "cmdVersBdd";
+            this.cmdVersBdd.Size = new System.Drawing.Size(107, 33);
+            this.cmdVersBdd.TabIndex = 18;
+            this.cmdVersBdd.Text = "&Valider";
+            this.cmdVersBdd.UseVisualStyleBackColor = true;
+            this.cmdVersBdd.Click += new System.EventHandler(this.cmdVersBdd_Click);
             // 
             // cboxMarque
             // 
@@ -283,6 +305,8 @@ namespace CreditCeleste
             this.Controls.Add(this.cboxMarque);
             this.Controls.Add(this.cmdCredit);
             this.Controls.Add(this.cmdIntroduction);
+            this.Controls.Add(this.cmdVersBdd);
+            this.Controls.Add(this.cmdJenregistre);
             this.Controls.Add(this.lblPuissance);
             this.Controls.Add(this.lblNumeroSerie);
             this.Controls.Add(this.lblNumeroImmat);
@@ -301,8 +325,10 @@ namespace CreditCeleste
         private System.Windows.Forms.Label lblNumeroImmat;
         private System.Windows.Forms.Label lblNumeroSerie;
         private System.Windows.Forms.Label lblPuissance;
+        private System.Windows.Forms.Button cmdJenregistre;
         private System.Windows.Forms.Button cmdIntroduction;
         private System.Windows.Forms.Button cmdCredit;
+        private System.Windows.Forms.Button cmdVersBdd;
         private System.Windows.Forms.ComboBox cboxMarque;
         private System.Windows.Forms.Label lblMarque;
         private System.Windows.Forms.Label lblModele;

@@ -62,5 +62,13 @@ namespace CreditCeleste
             this.Hide();
 
         }
+
+        private void cmdRelance_Click(object sender, EventArgs e)
+        {
+            frmChoixConcession fenChoixConcession = new frmChoixConcession();
+            fenChoixConcession.PagePrecedente = "Relance";
+            fenChoixConcession.Show();
+            this.Hide();
+        }
     }
 }

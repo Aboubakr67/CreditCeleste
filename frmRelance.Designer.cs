@@ -30,6 +30,8 @@ namespace CreditCeleste
         private void InitializeComponent()
         {
             this.dataGridRelance = new System.Windows.Forms.DataGridView();
+            this.lblNomConcession = new System.Windows.Forms.Label();
+            this.cmdRetour = new System.Windows.Forms.Button();
             this.Numéro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,9 +39,6 @@ namespace CreditCeleste
             this.Taux = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mensualite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Accepter = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Refuser = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.lblNomConcession = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRelance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,18 +55,37 @@ namespace CreditCeleste
             this.Taux,
             this.Duree,
             this.Mensualite,
-            this.Accepter,
-            this.Refuser});
-            this.dataGridRelance.Location = new System.Drawing.Point(48, 117);
             this.dataGridRelance.Name = "dataGridRelance";
             this.dataGridRelance.ReadOnly = true;
-            this.dataGridRelance.Size = new System.Drawing.Size(694, 292);
             this.dataGridRelance.TabIndex = 2;
             this.dataGridRelance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRelance_CellContentClick);
+            // 
+            // lblNomConcession
+            // 
+            this.lblNomConcession.AutoSize = true;
+            this.lblNomConcession.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomConcession.Location = new System.Drawing.Point(419, 38);
+            this.lblNomConcession.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNomConcession.Name = "lblNomConcession";
+            this.lblNomConcession.Size = new System.Drawing.Size(159, 59);
+            this.lblNomConcession.TabIndex = 3;
+            this.lblNomConcession.Text = "label1";
+            // 
+            // cmdRetour
+            // 
+            this.cmdRetour.Location = new System.Drawing.Point(478, 511);
+            this.cmdRetour.Margin = new System.Windows.Forms.Padding(4);
+            this.cmdRetour.Name = "cmdRetour";
+            this.cmdRetour.Size = new System.Drawing.Size(100, 31);
+            this.cmdRetour.TabIndex = 4;
+            this.cmdRetour.Text = "Retour";
+            this.cmdRetour.UseVisualStyleBackColor = true;
+            this.cmdRetour.Click += new System.EventHandler(this.cmdRetour_Click);
             // 
             // Numéro
             // 
             this.Numéro.HeaderText = "Numéro";
+            this.Numéro.MinimumWidth = 6;
             this.Numéro.Name = "Numéro";
             this.Numéro.ReadOnly = true;
             this.Numéro.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -77,6 +95,7 @@ namespace CreditCeleste
             // Nom
             // 
             this.Nom.HeaderText = "Nom";
+            this.Nom.MinimumWidth = 6;
             this.Nom.Name = "Nom";
             this.Nom.ReadOnly = true;
             this.Nom.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -85,6 +104,7 @@ namespace CreditCeleste
             // Prenom
             // 
             this.Prenom.HeaderText = "Prenom";
+            this.Prenom.MinimumWidth = 6;
             this.Prenom.Name = "Prenom";
             this.Prenom.ReadOnly = true;
             this.Prenom.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -93,6 +113,7 @@ namespace CreditCeleste
             // Montant
             // 
             this.Montant.HeaderText = "Montant";
+            this.Montant.MinimumWidth = 6;
             this.Montant.Name = "Montant";
             this.Montant.ReadOnly = true;
             this.Montant.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -101,6 +122,7 @@ namespace CreditCeleste
             // Taux
             // 
             this.Taux.HeaderText = "Taux";
+            this.Taux.MinimumWidth = 6;
             this.Taux.Name = "Taux";
             this.Taux.ReadOnly = true;
             this.Taux.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -109,6 +131,7 @@ namespace CreditCeleste
             // Duree
             // 
             this.Duree.HeaderText = "Duree";
+            this.Duree.MinimumWidth = 6;
             this.Duree.Name = "Duree";
             this.Duree.ReadOnly = true;
             this.Duree.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -117,44 +140,20 @@ namespace CreditCeleste
             // Mensualite
             // 
             this.Mensualite.HeaderText = "Mensualite";
+            this.Mensualite.MinimumWidth = 6;
             this.Mensualite.Name = "Mensualite";
             this.Mensualite.ReadOnly = true;
             this.Mensualite.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Mensualite.Width = 70;
             // 
-            // Accepter
             // 
-            this.Accepter.HeaderText = "Accepter";
-            this.Accepter.Name = "Accepter";
-            this.Accepter.ReadOnly = true;
-            this.Accepter.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Accepter.Width = 80;
-            // 
-            // Refuser
-            // 
-            this.Refuser.HeaderText = "Refuser";
-            this.Refuser.Name = "Refuser";
-            this.Refuser.ReadOnly = true;
-            this.Refuser.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Refuser.Width = 80;
-            // 
-            // lblNomConcession
-            // 
-            this.lblNomConcession.AutoSize = true;
-            this.lblNomConcession.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomConcession.Location = new System.Drawing.Point(314, 31);
-            this.lblNomConcession.Name = "lblNomConcession";
-            this.lblNomConcession.Size = new System.Drawing.Size(132, 47);
-            this.lblNomConcession.TabIndex = 3;
-            this.lblNomConcession.Text = "label1";
             // 
             // frmRelance
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblNomConcession);
             this.Controls.Add(this.dataGridRelance);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRelance";
             this.Text = "frmRelance";
             this.Load += new System.EventHandler(this.frmRelance_Load);
@@ -167,6 +166,8 @@ namespace CreditCeleste
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridRelance;
+        private System.Windows.Forms.Label lblNomConcession;
+        private System.Windows.Forms.Button cmdRetour;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numéro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prenom;
@@ -174,8 +175,5 @@ namespace CreditCeleste
         private System.Windows.Forms.DataGridViewTextBoxColumn Taux;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duree;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mensualite;
-        private System.Windows.Forms.DataGridViewButtonColumn Accepter;
-        private System.Windows.Forms.DataGridViewButtonColumn Refuser;
-        private System.Windows.Forms.Label lblNomConcession;
     }
 }
