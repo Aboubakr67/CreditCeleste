@@ -12,6 +12,25 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\Users\aboub\Desktop\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://localhost:8080/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +50,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6CD51D918887A6B2C9CB6EBD587872560B470209</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CreditCeleste_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Client">
@@ -54,8 +85,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientVoit.cs" />
-    <Compile Include="Collaborateur.cs" />
     <Compile Include="Concession.cs" />
+    <Compile Include="frmChoixConcession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChoixConcession.Designer.cs">
+      <DependentUpon>frmChoixConcession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClient.Designer.cs">
+      <DependentUpon>FrmClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCredit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,17 +110,29 @@
     <Compile Include="frmAccueil.Designer.cs">
       <DependentUpon>frmAccueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCreditDeLaBDD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCreditDeLaBDD.Designer.cs">
+      <DependentUpon>FrmCreditDeLaBDD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEtude.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEtude.Designer.cs">
+      <DependentUpon>frmEtude.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIntroduction.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmIntroduction.Designer.cs">
       <DependentUpon>frmIntroduction.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListeCredit.cs">
+    <Compile Include="frmRelance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListeCredit.Designer.cs">
-      <DependentUpon>FrmListeCredit.cs</DependentUpon>
+    <Compile Include="frmRelance.Designer.cs">
+      <DependentUpon>frmRelance.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSaisieBien.cs">
       <SubType>Form</SubType>
@@ -86,25 +140,47 @@
     <Compile Include="frmSaisieBien.Designer.cs">
       <DependentUpon>frmSaisieBien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVoiture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVoiture.Designer.cs">
+      <DependentUpon>frmVoiture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Globale.cs" />
+    <Compile Include="Persistance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Voiture.cs" />
     <Compile Include="Vendeur.cs" />
+    <EmbeddedResource Include="frmChoixConcession.resx">
+      <DependentUpon>frmChoixConcession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClient.resx">
+      <DependentUpon>FrmClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCredit.resx">
       <DependentUpon>FrmCredit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAccueil.resx">
       <DependentUpon>frmAccueil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCreditDeLaBDD.resx">
+      <DependentUpon>FrmCreditDeLaBDD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEtude.resx">
+      <DependentUpon>frmEtude.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIntroduction.resx">
       <DependentUpon>frmIntroduction.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListeCredit.resx">
-      <DependentUpon>FrmListeCredit.cs</DependentUpon>
+    <EmbeddedResource Include="frmRelance.resx">
+      <DependentUpon>frmRelance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSaisieBien.resx">
       <DependentUpon>frmSaisieBien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVoiture.resx">
+      <DependentUpon>frmVoiture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -116,6 +192,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="CreditCeleste_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -128,6 +206,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

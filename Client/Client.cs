@@ -8,10 +8,16 @@ namespace CreditCeleste
 {
     public abstract class Client  
     {   // indique qu'il nest plus possible d'instancier un client, (cree un client)
-        private int numeroClient;
+        private int numeroClient;       // sert a rien
         private string monCidClient;
         private string nomClient;
         private string prenomClient;
+        private string telClient;
+        private string emailClient;
+        private string numRueClient;
+        private string rueClient;
+        private string villeClient;
+        private string cpClient;
 
         public Client()
         {
@@ -45,6 +51,20 @@ namespace CreditCeleste
             prenomClient = prenomC;
         }
 
+        public Client(string monCid, string nomC, string prenomC, 
+            string telC, string emailC, string numRueC, string rueC, string villeC, 
+            string cpC)
+        {
+            monCidClient = monCid;
+            nomClient = nomC;
+            prenomClient = prenomC;
+            telClient = telC;
+            emailClient = emailC;
+            numRueClient = numRueC;
+            rueClient = rueC;
+            villeClient = villeC;
+            cpClient = cpC;
+        }
 
         public int getNumeroClient()
         {
@@ -92,6 +112,65 @@ namespace CreditCeleste
 
         }
 
+        public string getTelClient()
+        {
+            return telClient;
+        }
+
+        public void setTelClient(string telC)
+        {
+            telClient = telC;
+        }
+
+        public string getEmailClient()
+        {
+            return emailClient;
+        }
+
+        public void setEmailClient(string emailC)
+        {
+            emailClient = emailC;
+        }
+
+        public string getNumRueClient()
+        {
+            return numRueClient;
+        }
+
+        public void setNumRueClient(string numRueC)
+        {
+            numRueClient = numRueC;
+        }
+
+        public string getRueClient()
+        {
+            return rueClient;
+        }
+
+        public void setRueClient(string rueC)
+        {
+            rueClient = rueC;
+        }
+        public string getVilleClient()
+        {
+            return villeClient;
+        }
+
+        public void setVilleClient(string villeC)
+        {
+            villeClient = villeC;
+        }
+
+        public string getCodePostalClient()
+        {
+            return cpClient;
+        }
+
+        public void setCodePostalClient(string cpC)
+        {
+            cpClient = cpC;
+        }
+
         public void setClient(string moncid, string nomC, string prenomC)
         {
             monCidClient = moncid;
@@ -99,6 +178,20 @@ namespace CreditCeleste
             prenomClient = prenomC;
         }
 
+        public void setClient(string monCid, string nomC, string prenomC,
+            string telC, string emailC, string numRueC, string rueC, string villeC,
+            string cpC)
+        {
+            monCidClient = monCid;
+            nomClient = nomC;
+            prenomClient = prenomC;
+            telClient = telC;
+            emailClient = emailC;
+            numRueClient = numRueC;
+            rueClient = rueC;
+            villeClient = villeC;
+            cpClient = cpC;
+        }
 
 
 

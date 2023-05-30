@@ -8,35 +8,46 @@ namespace CreditCeleste
 {
     class Voiture
     {
-        private string monNomVehicule;
-        private string monAgeVehicule;
-        private string monAncienVehicule;
-        private string monDate1erimmatriculation;
+        private string maMarqueVehicule;
+        private string monAnneeVehicule;
+        private string monModeleVehicule;
         private string monNumeroImmat;
         private string monNumeroSerie;
         private string monPuissance;
+        private string monDate1erimmatriculation;
+        private string energie;
+        private string prixVehicule;
+        private byte imageVehicule;
 
-        public Voiture(string monNomVehicule, string monAgeVehicule, string monAncienVehicule)
+
+        public Voiture(string maMarqueVehicule)
         {
             // info de l'écran Introduction
-            this.monNomVehicule = monNomVehicule;
-            this.monAgeVehicule = monAgeVehicule;
-            this.monAncienVehicule = monAncienVehicule;
+            this.maMarqueVehicule = maMarqueVehicule;
         }
 
-        public Voiture(string NomVehicule, string AgeVehicule, string AncienVehicule, 
+        public Voiture(string maMarqueVehicule, string monAnneeVehicule)
+        {
+            // info de l'écran Introduction
+            this.maMarqueVehicule = maMarqueVehicule;
+            this.monAnneeVehicule = monAnneeVehicule;
+        }
+
+        public Voiture(string NomVehicule, string modele, string annee, 
             string Date1erimmatriculation, string NumeroImmat, string NumeroSerie, 
-            string Puissance)
+            string Puissance, string energ, string prixVeh)
         {
             // avec tout les élements
             // si on crée l'objet à partir de l'ecran
-            monNomVehicule = NomVehicule;
-            monAgeVehicule = AgeVehicule;
-            monAncienVehicule = AncienVehicule;
+            maMarqueVehicule = NomVehicule;
+            monModeleVehicule = modele;
+            monAnneeVehicule = annee;
             monDate1erimmatriculation = Date1erimmatriculation;
             monNumeroImmat = NumeroImmat;
             monNumeroSerie = NumeroSerie;
             monPuissance = Puissance;
+            energie = energ;
+            prixVehicule = prixVeh;
         }
 
         public void majVersBdd()
@@ -46,51 +57,59 @@ namespace CreditCeleste
 
         // Creee get et set
 
-        public void setVoiture(string NomVehicule,string AgeVehicule,string AncienVehicule)
+        public void setVoiture(string NomVehicule,string AgeVehicule)
         {
             // premier ecran
-            monNomVehicule = NomVehicule;
-            monAgeVehicule = AgeVehicule;
-            monAncienVehicule = AncienVehicule;
+            maMarqueVehicule = NomVehicule;
+            monAnneeVehicule = AgeVehicule;
 
         }
-        public void setVoiture(string NomVehicule, string AgeVehicule, string AncienVehicule,
+        public void setVoiture(string NomVehicule, string modele, string annee,
             string Date1erimmatriculation, string NumeroImmat, string NumeroSerie,
-            string Puissance)
+            string Puissance, string energ, string prixVeh)
         {
             // deuxieme ecran
-            monNomVehicule = NomVehicule;
-            monAgeVehicule = AgeVehicule;
-            monAncienVehicule = AncienVehicule;
+            maMarqueVehicule = NomVehicule;
+            monModeleVehicule = modele;
+            monAnneeVehicule = annee;
             monDate1erimmatriculation = Date1erimmatriculation;
             monNumeroImmat = NumeroImmat;
             monNumeroSerie = NumeroSerie;
             monPuissance = Puissance;
+            energie = energ;
+            prixVehicule = prixVeh;
         }
 
         public void setVoiture(string NomVehicule, string AgeVehicule,
             string Date1erimmatriculation, string NumeroImmat, string NumeroSerie,
-            string Puissance)
+            string Puissance, string energ, string prixVeh)
         {
             // avec tout sauf ancien vehicule
-            monNomVehicule = NomVehicule;
-            monAgeVehicule = AgeVehicule;
+            maMarqueVehicule = NomVehicule;
+            monAnneeVehicule = AgeVehicule;
             monDate1erimmatriculation = Date1erimmatriculation;
             monNumeroImmat = NumeroImmat;
             monNumeroSerie = NumeroSerie;
             monPuissance = Puissance;
+            energie = energ;
+            prixVehicule = prixVeh;
         }
 
 
 
-        public string getNomVoiture()
+        public string getMarque()
         {
-            return monNomVehicule;
+            return maMarqueVehicule;
         }
 
         public string getDatePremiereImma()
         {
             return monDate1erimmatriculation;
+        }
+
+        public string getModele()
+        {
+            return monModeleVehicule;
         }
 
         public string getNumImmatriculation()
@@ -108,14 +127,24 @@ namespace CreditCeleste
             return monPuissance;
         }
 
-        public string getAgeVehicule()
+        public string getAnneeVehicule()
         {
-            return monAgeVehicule;
+            return monAnneeVehicule;
         }
 
-        public string getAncienVehicule()
+        public string getEnergieVehicule()
         {
-            return monAncienVehicule;
+            return energie;
+        }
+
+        public string getPrixVehicule()
+        {
+            return prixVehicule;
+        }
+
+        public byte getImageVehicule()
+        {
+            return imageVehicule;
         }
 
     }

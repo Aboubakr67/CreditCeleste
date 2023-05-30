@@ -1,0 +1,222 @@
+USE [master]
+GO
+DROP DATABASE IF EXISTS [CreditCelesteAP]
+GO
+CREATE DATABASE [CreditCelesteAP]
+GO
+USE [CreditCelesteAP]
+GO
+CREATE TABLE [dbo].[AGENCE](
+	[codeAgence] [varchar](50) NOT NULL,
+	[nomAgence] [varchar](50) NULL,
+	[telAgence] [varchar](50) NULL,
+	[emailAgence] [varchar](50) NULL,
+	[regionAgence] [varchar](50) NULL,
+	[villeAgence] [varchar](50) NULL,
+	[nbEmploye] [varchar](50) NULL,
+	[numSiret] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_AGENCE] PRIMARY KEY CLUSTERED 
+(
+	[codeAgence] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CLIENT]    Script Date: 30/09/2022 10:34:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CLIENT](
+	[codeClient] INT IDENTITY NOT NULL,
+	[civilite] [varchar](50) NULL,
+	[nomClient] [varchar](50) NULL,
+	[prenomClient] [varchar](50) NULL,
+	[telClient] [varchar](50) NULL,
+	[emailClient] [varchar](50) NULL,
+	[numRueClient] [varchar](50) NULL,
+	[rueClient] [varchar](50) NULL,
+	[villeClient] [varchar](50) NULL,
+	[cpClient] [varchar](50) NULL,
+ CONSTRAINT [PK_CLIENT] PRIMARY KEY CLUSTERED 
+(
+	[codeClient] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[COLLABORATEUR]    Script Date: 30/09/2022 10:34:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[COLLABORATEUR](
+	[codeCollab] [varchar](50) NOT NULL,
+	[nomCollab] [varchar](50) NULL,
+	[prenomCollab] [varchar](50) NULL,
+	[telCollab] [varchar](50) NULL,
+	[emailCollab] [varchar](50) NULL,
+	[codeAgence] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_COLLABORATEUR] PRIMARY KEY CLUSTERED 
+(
+	[codeCollab] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CONCESSION]    Script Date: 30/09/2022 10:34:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CONCESSION](
+	[codeConcession] [varchar](50) NOT NULL,
+	[nomConcession] [varchar](50) NULL,
+	[telConcession] [varchar](50) NULL,
+	[emailConcession] [varchar](50) NULL,
+	[regionConcession] [varchar](50) NULL,
+	[villeConcession] [varchar](50) NULL,
+	[stockVehicule] [varchar](50) NULL,
+	[codeAgence] [varchar](50) NOT NULL,
+	[codeCollab] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_CONCESSION] PRIMARY KEY CLUSTERED 
+(
+	[codeConcession] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CREDIT]    Script Date: 30/09/2022 10:34:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CREDIT](
+	[numCredit] INT IDENTITY NOT NULL,
+	[montantCredit] [varchar](50) NULL,
+	[tauxCredit] [varchar](50) NULL,
+	[dureeCredit] [varchar](50) NULL,
+	[mensualite] [varchar](50) NULL,
+	[dateSaisie] [varchar](50) NULL,
+	[debutCredit] [varchar](50) NULL,
+	[finCredit] [varchar](50) NULL,
+	[numVendeur] INT NOT NULL,
+	[codeClient] INT NOT NULL,
+	[codeValidation] [varchar](5) NULL,
+	[codeCollab] [varchar](50) NULL,
+  [codeConcession] [varchar](50) NULL,
+ CONSTRAINT [PK_CREDIT] PRIMARY KEY CLUSTERED 
+(
+	[numCredit] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CREDIT_CELESTE]    Script Date: 30/09/2022 10:34:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CREDIT_CELESTE](
+	[numSiret] [varchar](50) NOT NULL,
+	[telCC] [varchar](50) NULL,
+	[numRueCC] [varchar](50) NULL,
+	[rueCC] [varchar](50) NULL,
+	[villeCC] [varchar](50) NULL,
+	[cpCC] [varchar](50) NULL,
+	[nomPDGCC] [varchar](50) NULL,
+	[prenomPDGCC] [varchar](50) NULL,
+ CONSTRAINT [PK_CREDIT_CELESTE] PRIMARY KEY CLUSTERED 
+(
+	[numSiret] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[VEHICULE]    Script Date: 30/09/2022 10:34:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[VEHICULE](
+	[numVehicule] INT NOT NULL,
+	[marque] [varchar](50) NULL,
+	[modele] [varchar](50) NULL,
+	[anneeModele] [varchar](50) NULL,
+	[numImmat] [varchar](50) NULL,
+	[numSerie] [varchar](50) NULL,
+	[puissance] [varchar](50) NULL,
+	[datePremImmat] [varchar](50) NULL,
+	[energie] [varchar](50) NULL,
+	[codeConcession] [varchar](50) NOT NULL,
+	[prixVehicule] INT  NULL,
+	[imageVehicule] IMAGE  NULL,
+ CONSTRAINT [PK_VEHICULE] PRIMARY KEY CLUSTERED 
+(
+	[numVehicule] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[VENDEUR]    Script Date: 30/09/2022 10:34:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[VENDEUR](
+	[numVendeur] INT IDENTITY NOT NULL,
+	[cidVendeur] [varchar](50) NULL,
+	[nomVendeur] [varchar](50) NULL,
+	[prenomVendeur] [varchar](50) NULL,
+	[codeConcession] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_VENDEUR] PRIMARY KEY CLUSTERED 
+(
+	[numVendeur] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[AGENCE]  WITH CHECK ADD  CONSTRAINT [FK_AGENCE_CREDIT_CELESTE] FOREIGN KEY([numSiret])
+REFERENCES [dbo].[CREDIT_CELESTE] ([numSiret])
+GO
+ALTER TABLE [dbo].[AGENCE] CHECK CONSTRAINT [FK_AGENCE_CREDIT_CELESTE]
+GO
+ALTER TABLE [dbo].[COLLABORATEUR]  WITH CHECK ADD  CONSTRAINT [FK_COLLABORATEUR_AGENCE] FOREIGN KEY([codeAgence])
+REFERENCES [dbo].[AGENCE] ([codeAgence])
+GO
+ALTER TABLE [dbo].[COLLABORATEUR] CHECK CONSTRAINT [FK_COLLABORATEUR_AGENCE]
+GO
+ALTER TABLE [dbo].[CONCESSION]  WITH CHECK ADD  CONSTRAINT [FK_CONCESSION_AGENCE] FOREIGN KEY([codeAgence])
+REFERENCES [dbo].[AGENCE] ([codeAgence])
+GO
+ALTER TABLE [dbo].[CONCESSION] CHECK CONSTRAINT [FK_CONCESSION_AGENCE]
+GO
+ALTER TABLE [dbo].[CONCESSION]  WITH CHECK ADD  CONSTRAINT [FK_CONCESSION_COLLABORATEUR] FOREIGN KEY([codeCollab])
+REFERENCES [dbo].[COLLABORATEUR] ([codeCollab])
+GO
+ALTER TABLE [dbo].[CONCESSION] CHECK CONSTRAINT [FK_CONCESSION_COLLABORATEUR]
+GO
+ALTER TABLE [dbo].[CREDIT]  WITH CHECK ADD  CONSTRAINT [FK_CREDIT_CLIENT] FOREIGN KEY([codeClient])
+REFERENCES [dbo].[CLIENT] ([codeClient])
+GO
+ALTER TABLE [dbo].[CREDIT] CHECK CONSTRAINT [FK_CREDIT_CLIENT]
+GO
+ALTER TABLE [dbo].[CREDIT]  WITH CHECK ADD  CONSTRAINT [FK_CREDIT_VENDEUR] FOREIGN KEY([numVendeur])
+REFERENCES [dbo].[VENDEUR] ([numVendeur])
+GO
+ALTER TABLE [dbo].[CREDIT] CHECK CONSTRAINT [FK_CREDIT_VENDEUR]
+GO
+ALTER TABLE [dbo].[CREDIT]  WITH CHECK ADD  CONSTRAINT [FK_CREDIT_COLLABORATEUR] FOREIGN KEY([codeCollab])
+REFERENCES [dbo].[COLLABORATEUR] ([codeCollab])
+GO
+ALTER TABLE [dbo].[CREDIT]  WITH CHECK ADD  CONSTRAINT [FK_CREDIT_CONCESSION] FOREIGN KEY([codeConcession])
+REFERENCES [dbo].[CONCESSION] ([codeConcession])
+GO
+ALTER TABLE [dbo].[CREDIT] CHECK CONSTRAINT [FK_CREDIT_VENDEUR]
+GO
+ALTER TABLE [dbo].[VEHICULE]  WITH CHECK ADD  CONSTRAINT [FK_VEHICULE_CONCESSION] FOREIGN KEY([codeConcession])
+REFERENCES [dbo].[CONCESSION] ([codeConcession])
+GO
+ALTER TABLE [dbo].[VEHICULE] CHECK CONSTRAINT [FK_VEHICULE_CONCESSION]
+GO
+ALTER TABLE [dbo].[VENDEUR]  WITH CHECK ADD  CONSTRAINT [FK_VENDEUR_CONCESSION] FOREIGN KEY([codeConcession])
+REFERENCES [dbo].[CONCESSION] ([codeConcession])
+GO
+ALTER TABLE [dbo].[VENDEUR] CHECK CONSTRAINT [FK_VENDEUR_CONCESSION]
+GO
+USE [CreditCelesteAP]
+GO
+ALTER DATABASE [CreditCelesteAP] SET  READ_WRITE 
+GO

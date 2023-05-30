@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="CreditCeleste.ClientVoit">
+  <Class Name="CreditCeleste.ClientVoit" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAQAAABAAAAAAAAAAAAAAgAAEAAAAAgAAAAAAAAAAA=</HashCode>
       <FileName>ClientVoit.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CreditCeleste.Concession">
+  <Class Name="CreditCeleste.Concession" Collapsed="true">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAAAAgAAAAAAAAAAAAgAAAAAAgAIABAAg=</HashCode>
@@ -15,76 +15,76 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CreditCeleste.frmAccueil" Collapsed="true">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+    <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACBAAAEAAACAAAICABAAAAAAAAQAQgAAAAA=</HashCode>
       <FileName>frmAccueil.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CreditCeleste.FrmCredit" Collapsed="true">
-    <Position X="7.75" Y="1.25" Width="1.5" />
+    <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEQAQAAKBAABEAJACAABACgARAAAAAAEBAAAAAAAA=</HashCode>
       <FileName>FrmCredit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CreditCeleste.frmIntroduction" Collapsed="true">
-    <Position X="6" Y="2" Width="1.5" />
+    <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAQCCAAaAgBgQAMQSIAAACCAAQEiAAAEACCwACAAA=</HashCode>
       <FileName>frmIntroduction.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CreditCeleste.FrmListeCredit" Collapsed="true">
-    <Position X="6" Y="0.5" Width="1.5" />
+    <Position X="2.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gQAAAAAAACAAAAAGAASAgAACAAAAgBAAAAAAAAAAAAA=</HashCode>
       <FileName>FrmListeCredit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CreditCeleste.frmSaisieBien" Collapsed="true">
-    <Position X="6" Y="1.25" Width="1.5" />
+    <Position X="4" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAQCQAESBgABUAIQSAEACCAAAQEAQAAGAMAQAAAAA=</HashCode>
       <FileName>frmSaisieBien.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CreditCeleste.Globale">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+  <Class Name="CreditCeleste.Globale" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEQAAAAAAAAAAAAAAAgAAAAABAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Globale.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CreditCeleste.Program" Collapsed="true">
-    <Position X="7.75" Y="3" Width="1.5" />
+    <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CreditCeleste.Vendeur">
-    <Position X="2.25" Y="3.5" Width="1.5" />
+  <Class Name="CreditCeleste.Vendeur" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAEAAAAAAAAAACAgAAIAIAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>Vendeur.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CreditCeleste.Voiture">
-    <Position X="4" Y="0.5" Width="1.5" />
+  <Class Name="CreditCeleste.Voiture" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AKAAAAIRAAAAAAgQAAAAAAAAAIQBAAgEAAABAAgBAIA=</HashCode>
       <FileName>Voiture.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CreditCeleste.Properties.Resources" Collapsed="true">
-    <Position X="6" Y="3.75" Width="1.5" />
+    <Position X="2.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="CreditCeleste.Properties.Settings" Collapsed="true">
-    <Position X="7.75" Y="3.75" Width="1.5" />
+    <Position X="4" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>

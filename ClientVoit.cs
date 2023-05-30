@@ -9,7 +9,7 @@ namespace CreditCeleste
     class ClientVoit : Client
     {
         private string nomVendeur;
-        private string monVoitureWassim;
+        private string VoitureAboubakr3;
         
         ClientVoit()
         {}
@@ -18,6 +18,13 @@ namespace CreditCeleste
         { }
 
         public ClientVoit(string cidClient, string nomCli, string prenomCli, string nomVend) : base(cidClient, nomCli, prenomCli)
+        {
+            nomVendeur = nomVend;
+        }
+
+        
+        public ClientVoit(string cidClient, string nomCli, string prenomCli, string nomVend, string telCli, string emailCli, string numRueCli, string rueCli, string villeCli,
+            string cpCli) : base(cidClient, nomCli, prenomCli, telCli, emailCli, numRueCli, rueCli, villeCli, cpCli)
         {
             nomVendeur = nomVend;
         }
@@ -35,6 +42,13 @@ namespace CreditCeleste
             setPrenomClient(prenomCli);
             //setClient(cidClient, nomCli, prenomCli);
             // pareil
+        }
+
+        public void setClientVoit(string cidClient, string nomCli, string prenomCli, string nomVend, string telCli, string emailCli, string numRueCli, string rueCli, string villeCli, string cpCli)
+        {
+            nomVendeur = nomVend;
+            // setClient vient de la mère (Client)
+            setClient(cidClient, nomCli, prenomCli, telCli, emailCli, numRueCli, rueCli, villeCli, cpCli);
         }
 
         public string getVendeur()

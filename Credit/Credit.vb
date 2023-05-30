@@ -1,4 +1,4 @@
-﻿Public Class Credit
+﻿Public Class Credit  ' projet CreditCeleste AP
 
     ' pourquoi creer un object credit ?
     ' - evite de reecrire le code
@@ -9,11 +9,18 @@
     '
     ' - attributs privée
 
+    Private monNumCredit As Integer
+    Private monNomClient As String
+    Private monPrenomClient As String
 
     Private monMontant As Double    ' montant financiée
     Private monDuree As Double
     Private monTaux As Double
     Private monMensualite As Double
+
+
+    'Private monDateDebut As Date
+    'Private monDateFin As Date
 
     ' constructeur
     Sub New()
@@ -46,11 +53,107 @@
 
     End Sub
 
-    Public Function getMensualite() As Double
 
-        monTaux = monTaux / 1200 ' un taux mensuel en pourcentage
+    Sub New(numCredit As Integer, nomClient As String, prenomClient As String, montant As Double, duree As Double, taux As Double, mensualite As Double)
 
-        monMensualite = Math.Round((monMontant * monTaux) / (1 - Math.Pow(1 + monTaux, -monDuree)), 2)
+        monNumCredit = numCredit
+        monNomClient = nomClient
+        monPrenomClient = prenomClient
+
+        monMontant = montant
+        monDuree = duree
+        monTaux = taux
+        monMensualite = mensualite
+
+
+    End Sub
+
+    Public Function getNumCredit() As Integer
+
+        Return monNumCredit
+
+    End Function
+
+    Public Function getNomClient() As String
+
+        Return monNomClient
+
+    End Function
+
+    Public Function getPrenomClient() As String
+
+        Return monPrenomClient
+
+    End Function
+
+    Public Function getMontant() As Double
+
+        Return monMontant
+
+    End Function
+
+
+    Public Function getDuree() As Double
+
+        Return monDuree
+
+    End Function
+
+    Public Function getTaux() As Double
+
+        Return monTaux
+
+    End Function
+
+
+    'Public Function getDateDebut() As Date
+
+    '    Return monDateDebut
+
+    'End Function
+
+    'Public Function getDateFin() As Date
+
+    '    Return monDateFin
+
+    'End Function
+
+    Sub setNomClient(nom As String)
+        monNomClient = nom
+    End Sub
+
+    Sub setPrenomClient(prenom As String)
+        monPrenomClient = prenom
+    End Sub
+
+    Sub setMontant(mont As Double)
+        monMontant = mont
+    End Sub
+
+    Sub setDuree(duree As Double)
+        monDuree = duree
+    End Sub
+
+    Sub setTaux(taux As Double)
+        monTaux = taux
+    End Sub
+
+
+    'Sub setDateDebut(debut As Date)
+    '    monDateDebut = debut
+    'End Sub
+
+    'Sub setDateFin(fin As Date)
+    '    monDateFin = fin
+    'End Sub
+
+    Public Function getMensualite() As Double  ' ap
+
+        Dim montauxLocal As Double
+
+        montauxLocal = monTaux / 1200 ' un taux mensuel en pourcentage
+
+        monMensualite = Math.Round((monMontant * montauxLocal) / (1 - Math.Pow(1 + montauxLocal, -monDuree)), 2)
 
 
         Return monMensualite

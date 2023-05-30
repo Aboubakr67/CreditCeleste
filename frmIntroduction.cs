@@ -27,6 +27,11 @@ namespace CreditCeleste
             //  identique aux variables de sessions
 
 
+            Console.WriteLine("Globale.laRegion : " + Globale.laRegion);
+            Console.WriteLine("Globale.laVille : " + Globale.laVille);
+
+
+
             //Lire l'objet consession et récuperer les vendeur pour les mettre dans le combobox
 
             foreach (Vendeur xVendeur in Globale.uneConcession.getLesVendeurs())
@@ -36,12 +41,11 @@ namespace CreditCeleste
 
             if (Globale.uneVoiture != null)
             {
-                txtNewVehc.Text = Globale.uneVoiture.getNomVoiture();
-                txtAncVehc.Text = Globale.uneVoiture.getAncienVehicule();
+                txtNewVehc.Text = Globale.uneVoiture.getMarque();
 
                 foreach (RadioButton radio in gpbAgeVehicule.Controls.OfType<RadioButton>())
                 {
-                    if (radio.Text == Globale.uneVoiture.getAgeVehicule())
+                    if (radio.Text == Globale.uneVoiture.getAnneeVehicule())
                     {
                         radio.Checked = true;
                     }
@@ -69,9 +73,15 @@ namespace CreditCeleste
         {
             // appel de la fenetre voiture
 
-            frmSaisieBien fenSaisieBien = new frmSaisieBien();
+            //frmSaisieBien fenSaisieBien = new frmSaisieBien();
 
-            fenSaisieBien.Show();
+            //fenSaisieBien.Show();
+
+            //this.Close();
+
+            frmVoiture fenVoiture = new frmVoiture();
+
+            fenVoiture.Show();
 
             this.Close();
         }
@@ -103,14 +113,14 @@ namespace CreditCeleste
             {
                 if (Globale.uneVoiture == null)
                 {       // la voiture n'existe pas
-                    Globale.uneVoiture = new Voiture(txtNewVehc.Text, age, txtAncVehc.Text);
+                    //Globale.uneVoiture = new Voiture(txtNewVehc.Text, age, txtAncVehc.Text);
                 }
                 else  // la voiture existe
                 {
                     // reprendre les données textes de l'écrans
                     // et les mettre dans l'objet
                     // 
-                    Globale.uneVoiture.setVoiture(txtNewVehc.Text, age, txtAncVehc.Text);
+                    //Globale.uneVoiture.setVoiture(txtNewVehc.Text, age, txtAncVehc.Text);
                 }
 
                 if (Globale.unClientVoit == null)
