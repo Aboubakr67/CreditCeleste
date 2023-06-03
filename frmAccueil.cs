@@ -24,7 +24,7 @@ namespace CreditCeleste
 
           
             // Gestion de mon application (Nom de la personne qui a fait le projet)
-            lblMonAppli.Text = Globale.monApplication;
+            //lblMonAppli.Text = Globale.monApplication;
 
 
             //Globale.uneConcession = new Concession("Garage ZENNIR", "Grand Est", "Strasbourg");

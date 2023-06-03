@@ -14,7 +14,7 @@ namespace CreditCeleste // AP
 
 
 
-        //public static SqlConnection cnx = new SqlConnection("Data Source=10.129.187.129; User Id = cnxtest; password = cnxtest; Initial Catalog = CreditCelesteAP");
+        public static SqlConnection cnx = new SqlConnection("Data Source=S922P29; User Id = cnxtest; password = cnxtest; Initial Catalog = CreditCelesteAP");
         //public static SqlConnection cnx = new SqlConnection("Data Source=10.167.229.6; User Id = cnxtest; password = cnxtest; Initial Catalog = CreditCelesteAP");
 
         public static void insertClient()

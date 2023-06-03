@@ -39,6 +39,7 @@ namespace CreditCeleste
             this.Taux = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mensualite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.examiner = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRelance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,8 +56,13 @@ namespace CreditCeleste
             this.Taux,
             this.Duree,
             this.Mensualite,
+            this.examiner});
+            this.dataGridRelance.Location = new System.Drawing.Point(64, 144);
+            this.dataGridRelance.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridRelance.Name = "dataGridRelance";
             this.dataGridRelance.ReadOnly = true;
+            this.dataGridRelance.RowHeadersWidth = 51;
+            this.dataGridRelance.Size = new System.Drawing.Size(925, 359);
             this.dataGridRelance.TabIndex = 2;
             this.dataGridRelance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRelance_CellContentClick);
             // 
@@ -146,11 +152,21 @@ namespace CreditCeleste
             this.Mensualite.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Mensualite.Width = 70;
             // 
+            // examiner
             // 
+            this.examiner.HeaderText = "Examiner";
+            this.examiner.MinimumWidth = 6;
+            this.examiner.Name = "examiner";
+            this.examiner.ReadOnly = true;
+            this.examiner.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.examiner.Width = 80;
             // 
             // frmRelance
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.cmdRetour);
             this.Controls.Add(this.lblNomConcession);
             this.Controls.Add(this.dataGridRelance);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -175,5 +191,6 @@ namespace CreditCeleste
         private System.Windows.Forms.DataGridViewTextBoxColumn Taux;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duree;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mensualite;
+        private System.Windows.Forms.DataGridViewButtonColumn examiner;
     }
 }
